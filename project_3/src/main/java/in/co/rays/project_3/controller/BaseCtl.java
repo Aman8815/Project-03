@@ -17,7 +17,7 @@ import in.co.rays.project_3.util.ServletUtility;
 /**
  * Base controller class of project. It contain (1) Generic operations (2)
  * Generic constants (3) Generic work flow
- * @author Gautam Gandhwani
+ * @author Aman Yashona
  *
  */
 public abstract class BaseCtl extends HttpServlet{
@@ -123,6 +123,8 @@ public abstract class BaseCtl extends HttpServlet{
         preload(request);
 
         String op = DataUtility.getString(request.getParameter("operation"));
+        
+        System.out.println("operation  ====>"+op);
 
         // Check if operation is not DELETE, VIEW, CANCEL, RESET and NULL then
         // perform input data validation

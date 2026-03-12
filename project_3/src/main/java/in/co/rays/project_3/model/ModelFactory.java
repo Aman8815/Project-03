@@ -1,12 +1,17 @@
 package in.co.rays.project_3.model;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.ResourceBundle;
+
+import in.co.rays.project_3.dto.OnlineCourseDTO;
+import in.co.rays.project_3.exception.ApplicationException;
+import in.co.rays.project_3.exception.DuplicateRecordException;
 
 /**
  * ModelFactory decides which model implementation run
  * 
- * @author Gautam Gandhwani
+ * @author Aman Yashona
  *
  */
 public final class ModelFactory {
@@ -192,4 +197,20 @@ public final class ModelFactory {
 
 		return facultyModel;
 	}
+	
+	public OnlineCourseModelInt getOnlineCourseModel() {
+		OnlineCourseModelInt OnlineCourseModel = (OnlineCourseModelInt) modelCache.get("OnlineCourseModel");
+		if (OnlineCourseModel == null) {
+			if ("Hibernate".equals(DATABASE)) {
+				OnlineCourseModel = new OnlineCourseModelHibImp();
+			}
+			if ("JDBC".equals(DATABASE)) {
+				OnlineCourseModel = new OnlineCourseModelHibImp();
+			}
+			modelCache.put("OnlineCourseModel", OnlineCourseModel);
+		}
+
+		return OnlineCourseModel;
+	}
+
 }

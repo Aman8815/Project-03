@@ -8,7 +8,7 @@ import in.co.rays.project_3.exception.DuplicateRecordException;
 
 /**
  * Interface of Marksheet model
- * @author Gautam Gandhwani
+ * @author Aman Yashona
  *
  */
 public interface MarksheetModelInt {

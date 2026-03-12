@@ -8,7 +8,7 @@ import in.co.rays.project_3.exception.DuplicateRecordException;
 
 /**
  * Interface of Role model
- * @author Gautam Gandhwani
+ * @author Aman Yashona
  *
  */
 public interface RoleModelInt {

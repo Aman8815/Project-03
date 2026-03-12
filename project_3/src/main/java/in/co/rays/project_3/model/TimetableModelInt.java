@@ -9,7 +9,7 @@ import in.co.rays.project_3.exception.DuplicateRecordException;
 
 /**
  * Interface of Timetable model
- * @author Gautam Gandhwani
+ * @author Aman Yashona
  *
  */
 public interface TimetableModelInt {

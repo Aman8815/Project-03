@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 import java.util.Date;
 /**
  * user JavaDto encapsulates user attributes
- * @author Gautam Gandhwani
+ * @author Aman Yashona
  *
  */
 

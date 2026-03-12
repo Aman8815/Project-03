@@ -15,7 +15,7 @@ import in.co.rays.project_3.util.HibDataSource;
 
 /**
  * Hibernate implements of course model
- * @author Gautam Gandhwani
+ * @author Aman Yashona
  *
  */
 public class CourseModelHibImp implements CourseModelInt {

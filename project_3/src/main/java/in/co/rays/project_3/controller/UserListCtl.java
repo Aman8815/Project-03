@@ -24,7 +24,7 @@ import in.co.rays.project_3.util.ServletUtility;
 /**
  * User List functionality controller.to perform Search and List operation.
  * 
- * @author Gautam Gandhwani
+ * @author Aman Yashona
  *
  */
 @WebServlet(name = "UserListCtl", urlPatterns = { "/ctl/UserListCtl" })
