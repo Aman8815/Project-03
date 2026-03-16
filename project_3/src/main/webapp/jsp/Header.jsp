@@ -220,8 +220,20 @@
 							class="fa fa-user-friends"></i>Staff Member List</a>
 					</div></li>
 					
+					<li class="nav-item dropdown" style="padding-left: 4px;"><a
+					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+					role="button" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false"> <font style="color: white;">Meeting Room</font>
+				</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="<%=ORSView.MEETING_ROOM_CTL%>"><i
+							class="fa fa-user-circle"></i>Add Meeting Room</a> <a
+							class="dropdown-item" href="<%=ORSView.MEETING_ROOM_LIST_CTL%>"><i
+							class="fa fa-user-friends"></i>Meeting Room List</a>
+					</div></li>
 					
-				<li class="nav-item dropdown" style="padding-left: 4px;"><a
+					
+		<%--		<li class="nav-item dropdown" style="padding-left: 4px;"><a
 					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 					role="button" data-toggle="dropdown" aria-haspopup="true"
 					aria-expanded="false"> <font style="color: white;">Online Course</font>
@@ -234,7 +246,7 @@
 					</div></li>
 					
 
-				<%-- <li class="nav-item dropdown" style="padding-left: 5px"><a
+				 <li class="nav-item dropdown" style="padding-left: 5px"><a
 					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 					role="button" data-toggle="dropdown" aria-haspopup="true"
 					aria-expanded="false"> <font style="color: white;">Product

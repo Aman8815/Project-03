@@ -13,7 +13,7 @@
 
 		<property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
 
-		<property name="hbm2ddl.auto">update</property>
+		<property name="hbm2ddl.auto">Update</property>
 		<property name="show_sql">true</property>
 
 		<!-- <property name="hibernate.cache.provider_class"> org.hibernate.cache.EhCacheProvider</property> 
@@ -28,7 +28,7 @@
 		<property name="hibernate.c3p0.idle_test_period">3000</property>
 
 
-		<mapping resource="in/co/rays/project_3/hbm/UserDTO.hbm.xml" />
+	 	<mapping resource="in/co/rays/project_3/hbm/UserDTO.hbm.xml" />
 		<mapping
 			resource="in/co/rays/project_3/hbm/StudentDTO.hbm.xml" />
 		<mapping
@@ -49,7 +49,9 @@
 			resource="in/co/rays/project_3/hbm/StaffMemberDTO.hbm.xml" />
 			
 				<mapping
-			resource="in/co/rays/project_3/hbm/OnlineCourseDTO.hbm.xml" />
+			resource="in/co/rays/project_3/hbm/OnlineCourseDTO.hbm.xml" /> 
+			
+			<mapping resource="in/co/rays/project_3/hbm/MeetingRoomDTO.hbm.xml"/>
 
 	</session-factory>
 </hibernate-configuration>

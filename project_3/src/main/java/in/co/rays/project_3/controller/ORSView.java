@@ -49,6 +49,9 @@ public interface ORSView {
 	
 	public String ONLINE_COURSE_VIEW = PAGE_FOLDER + "/OnlineCourseView.jsp";
 	public String ONLINE_COURSE_LIST_VIEW = PAGE_FOLDER + "/OnlineCourseListView.jsp";
+	
+	public String MEETING_ROOM_VIEW = PAGE_FOLDER + "/MeetingRoomView.jsp";
+	public String MEETING_ROOM_LIST_VIEW = PAGE_FOLDER +"/MeetingRoomListView.jsp";
 
 	public String ERROR_CTL = APP_CONTEXT + "/ErrorCtl";
 
@@ -87,5 +90,8 @@ public interface ORSView {
 	
 	public String ONLINE_COURSE_CTL = APP_CONTEXT + "/ctl/OnlineCourseCtl";
 	public String ONLINE_COURSE_LIST_CTL = APP_CONTEXT + "/ctl/OnlineCourseListCtl";
+	
+	public String MEETING_ROOM_CTL = APP_CONTEXT + "/ctl/MeetingRoomCtl";
+	public String MEETING_ROOM_LIST_CTL = APP_CONTEXT + "/ctl/MeetingRoomListCtl";
 
 }

@@ -212,5 +212,20 @@ public final class ModelFactory {
 
 		return OnlineCourseModel;
 	}
+	
+	public MeetingRoomModelInt getMeetingRoomModel() {
+		MeetingRoomModelInt MeetingRoomModel = (MeetingRoomModelInt) modelCache.get("MeetingRoomModel");
+		if (MeetingRoomModel == null) {
+			if ("Hibernate".equals(DATABASE)) {
+				MeetingRoomModel = new MeetingRoomModelHibImp();
+			}
+			if ("JDBC".equals(DATABASE)) {
+				MeetingRoomModel = new MeetingRoomModelHibImp();
+			}
+			modelCache.put("MeetingRoomModel", MeetingRoomModel);
+		}
+
+		return MeetingRoomModel;
+	}
 
 }
