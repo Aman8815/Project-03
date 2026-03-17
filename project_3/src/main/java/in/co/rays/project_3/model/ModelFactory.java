@@ -227,5 +227,20 @@ public final class ModelFactory {
 
 		return MeetingRoomModel;
 	}
+	
+	public ComplaintModelInt getComplaintModel() {
+		ComplaintModelInt ComplaintModel = (ComplaintModelInt) modelCache.get("ComplaintModel");
+		if (ComplaintModel == null) {
+			if ("Hibernate".equals(DATABASE)) {
+				ComplaintModel = new ComplaintModelHibImp();
+			}
+			if ("JDBC".equals(DATABASE)) {
+				ComplaintModel = new ComplaintModelHibImp();
+			}
+			modelCache.put("ComplaintModel", ComplaintModel);
+		}
+
+		return ComplaintModel;
+	}
 
 }

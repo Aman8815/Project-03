@@ -52,6 +52,9 @@ public interface ORSView {
 	
 	public String MEETING_ROOM_VIEW = PAGE_FOLDER + "/MeetingRoomView.jsp";
 	public String MEETING_ROOM_LIST_VIEW = PAGE_FOLDER +"/MeetingRoomListView.jsp";
+	
+	public String COMPLAINT_VIEW = PAGE_FOLDER + "/ComplaintView.jsp";
+	public String COMPLAINT_LIST_VIEW = PAGE_FOLDER +"/ComplaintListView.jsp";
 
 	public String ERROR_CTL = APP_CONTEXT + "/ErrorCtl";
 
@@ -93,5 +96,8 @@ public interface ORSView {
 	
 	public String MEETING_ROOM_CTL = APP_CONTEXT + "/ctl/MeetingRoomCtl";
 	public String MEETING_ROOM_LIST_CTL = APP_CONTEXT + "/ctl/MeetingRoomListCtl";
+	
+	public String COMPLAINT_CTL = APP_CONTEXT + "/ctl/ComplaintCtl";
+	public String COMPLAINT_LIST_CTL = APP_CONTEXT + "/ctl/ComplaintListCtl";
 
 }
