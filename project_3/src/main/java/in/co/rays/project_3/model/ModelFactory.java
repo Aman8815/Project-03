@@ -242,5 +242,19 @@ public final class ModelFactory {
 
 		return ComplaintModel;
 	}
-
+  
+	public RefundModelInt getRefundModel() {
+		RefundModelInt RefundModel = (RefundModelInt) modelCache.get("RefundModel");
+		if(RefundModel == null) {
+			if("Hibernate".equals(DATABASE)) {
+				RefundModel = new RefundModelHibImp();
+			}
+			if("JDBC".equals(DATABASE)){
+				RefundModel = new RefundModelHibImp();
+			}
+			
+			modelCache.put("RefundModel", RefundModel);
+		}
+		return RefundModel;
+	}
 }

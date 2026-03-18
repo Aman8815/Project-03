@@ -55,6 +55,9 @@ public interface ORSView {
 	
 	public String COMPLAINT_VIEW = PAGE_FOLDER + "/ComplaintView.jsp";
 	public String COMPLAINT_LIST_VIEW = PAGE_FOLDER +"/ComplaintListView.jsp";
+	
+	public String REFUND_VIEW = PAGE_FOLDER +"/RefundView.jsp";
+	public String REFUND_LIST_VIEW = PAGE_FOLDER +"/RefundListView.jsp";
 
 	public String ERROR_CTL = APP_CONTEXT + "/ErrorCtl";
 
@@ -99,5 +102,8 @@ public interface ORSView {
 	
 	public String COMPLAINT_CTL = APP_CONTEXT + "/ctl/ComplaintCtl";
 	public String COMPLAINT_LIST_CTL = APP_CONTEXT + "/ctl/ComplaintListCtl";
+	
+	public String REFUND_CTL = APP_CONTEXT + "/ctl/RefundCtl";
+	public String REFUND_LIST_CTL = APP_CONTEXT+ "/ctl/RefundListCtl";
 
 }

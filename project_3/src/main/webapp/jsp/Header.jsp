@@ -210,14 +210,14 @@
 				<li class="nav-item dropdown" style="padding-left: 4px;"><a
 					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 					role="button" data-toggle="dropdown" aria-haspopup="true"
-					aria-expanded="false"> <font style="color: white;">Staff
-							Member</font>
+					aria-expanded="false"> <font style="color: white;">Refund
+							</font>
 				</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="<%=ORSView.STAFF_MEMBER_CTL%>"><i
-							class="fa fa-user-circle"></i>Add Staff Member</a> <a
-							class="dropdown-item" href="<%=ORSView.STAFF_MEMBER_LIST_CTL%>"><i
-							class="fa fa-user-friends"></i>Staff Member List</a>
+						<a class="dropdown-item" href="<%=ORSView.REFUND_CTL%>"><i
+							class="fa fa-user-circle"></i>Add Refund</a> <a
+							class="dropdown-item" href="<%=ORSView.REFUND_LIST_CTL%>"><i
+							class="fa fa-user-friends"></i>Refund List</a>
 					</div></li>
 					
 				<%-- 	<li class="nav-item dropdown" style="padding-left: 4px;"><a

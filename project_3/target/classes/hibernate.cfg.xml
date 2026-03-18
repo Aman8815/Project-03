@@ -54,6 +54,8 @@
 			<mapping resource="in/co/rays/project_3/hbm/MeetingRoomDTO.hbm.xml"/>
 			
 			<mapping resource="in/co/rays/project_3/hbm/ComplaintDTO.hbm.xml"/>
+			
+			<mapping resource="in/co/rays/project_3/hbm/RefundDTO.hbm.xml"/>
 
 	</session-factory>
 </hibernate-configuration>
