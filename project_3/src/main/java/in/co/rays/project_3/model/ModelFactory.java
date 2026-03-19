@@ -257,4 +257,19 @@ public final class ModelFactory {
 		}
 		return RefundModel;
 	}
+	
+	public ScheduleModelInt getScheduleModel() {
+		ScheduleModelInt ScheduleModel = (ScheduleModelInt) modelCache.get("ScheduleModel");
+		if(ScheduleModel == null) {
+			if("Hibernate".equals(DATABASE)) {
+				ScheduleModel = new ScheduleModelHibImp();
+			}
+			if("JDBC".equals(DATABASE)){
+				ScheduleModel = new ScheduleModelHibImp();
+			}
+			
+			modelCache.put("ScheduleModel", ScheduleModel);
+		}
+		return ScheduleModel;
+	}
 }
