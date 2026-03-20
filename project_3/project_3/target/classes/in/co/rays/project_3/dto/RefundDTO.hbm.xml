@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18-Mar-2026, 11:39:22 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="in.co.rays.project_3.dto.RefundDTO" table="ST_REFUND">
+    <id name="id" type="java.lang.Long">
+    <column name="ID"></column>
+    <generator class="increment"></generator>
+    </id>
+        <property name="refundCode" type="java.lang.String">
+            <column name="REFUNDCODE" />
+        </property>
+        <property name="refundStatus" type="java.lang.String">
+            <column name="REFUNDSTATUS" />
+        </property>
+        <property name="refundDate" type="java.util.Date">
+            <column name="REFUNDDATE" />
+        </property>
+        <property name="refundAmount" type="java.lang.String">
+            <column name="REFUNDAMOUNT" />
+        </property>
+    </class>
+</hibernate-mapping>
