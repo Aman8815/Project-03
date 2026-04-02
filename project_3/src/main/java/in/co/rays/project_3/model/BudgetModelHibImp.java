@@ -8,21 +8,21 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 
-import in.co.rays.project_3.dto.ScheduleDTO;
+import in.co.rays.project_3.dto.BudgetDTO;
 import in.co.rays.project_3.exception.ApplicationException;
 import in.co.rays.project_3.exception.DuplicateRecordException;
 import in.co.rays.project_3.util.HibDataSource;
 
-public class ScheduleModelHibImp implements ScheduleModelInt{
-
-	public long add(ScheduleDTO dto) throws ApplicationException, DuplicateRecordException {
+public class BudgetModelHibImp implements BudgetModelInt {
+	
+	public long add(BudgetDTO dto) throws ApplicationException, DuplicateRecordException {
 		// TODO Auto-generated method stub
 		Session session = null;
 		Transaction tx = null;
 		long pk = 0;
-		ScheduleDTO existDto = findByName(dto.getScheduleCode());
+		BudgetDTO existDto = findByName(dto.getDepartment());
 		if (existDto != null) {
-			throw new DuplicateRecordException("ScheduleCode already exist");
+			throw new DuplicateRecordException("departament already exist");
 		}
 		try {
 			session = HibDataSource.getSession();
@@ -45,7 +45,7 @@ public class ScheduleModelHibImp implements ScheduleModelInt{
 		return pk;
 	}
 
-	public void delete(ScheduleDTO dto) throws ApplicationException {
+	public void delete(BudgetDTO dto) throws ApplicationException {
 		// TODO Auto-generated method stub
 		Session session = null;
 		Transaction tx = null;
@@ -67,7 +67,7 @@ public class ScheduleModelHibImp implements ScheduleModelInt{
 		}
 	}
 
-	public void update(ScheduleDTO dto) throws ApplicationException, DuplicateRecordException {
+	public void update(BudgetDTO dto) throws ApplicationException, DuplicateRecordException {
 		// TODO Auto-generated method stub
 		Session session = null;
 		Transaction tx = null;
@@ -91,15 +91,15 @@ public class ScheduleModelHibImp implements ScheduleModelInt{
 
 	}
 
-	public ScheduleDTO findByPK(long pk) throws ApplicationException {
+	public BudgetDTO findByPK(long pk) throws ApplicationException {
 		// TODO Auto-generated method stub
 		System.out.println("======" + pk);
 		Session session = null;
-		ScheduleDTO dto = null;
+		BudgetDTO dto = null;
 		try {
 			session = HibDataSource.getSession();
 
-			dto = (ScheduleDTO) session.get(ScheduleDTO.class, pk);
+			dto = (BudgetDTO) session.get(BudgetDTO.class, pk);
 		} catch (HibernateException e) {
 
 			throw new ApplicationException("Exception : Exception in getting course by pk");
@@ -110,17 +110,17 @@ public class ScheduleModelHibImp implements ScheduleModelInt{
 		return dto;
 	}
 
-	public ScheduleDTO findByName(String name) throws ApplicationException {
+	public BudgetDTO findByName(String name) throws ApplicationException {
 		// TODO Auto-generated method stub
 		Session session = null;
-		ScheduleDTO dto = null;
+		BudgetDTO dto = null;
 		try {
 			session = HibDataSource.getSession();
-			Criteria criteria = session.createCriteria(ScheduleDTO.class);
-			criteria.add(Restrictions.eq("scheduleCode", name));
+			Criteria criteria = session.createCriteria(BudgetDTO.class);
+			criteria.add(Restrictions.eq("department", name));
 			List list = criteria.list();
 			if (list.size() > 0) {
-				dto = (ScheduleDTO) list.get(0);
+				dto = (BudgetDTO) list.get(0);
 			}
 		} catch (HibernateException e) {
 
@@ -143,7 +143,7 @@ public class ScheduleModelHibImp implements ScheduleModelInt{
 		List list = null;
 		try {
 			session = HibDataSource.getSession();
-			Criteria criteria = session.createCriteria(ScheduleDTO.class);
+			Criteria criteria = session.createCriteria(BudgetDTO.class);
 			if (pageSize > 0) {
 				pageNo = ((pageNo - 1) * pageSize) + 1;
 				criteria.setFirstResult(pageNo);
@@ -159,33 +159,31 @@ public class ScheduleModelHibImp implements ScheduleModelInt{
 		return list;
 	}
 
-	public List search(ScheduleDTO dto) throws ApplicationException {
+	public List search(BudgetDTO dto) throws ApplicationException {
 		// TODO Auto-generated method stub
 		return search(dto, 0, 0);
 	}
 
-	public List search(ScheduleDTO dto, int pageNo, int pageSize) throws ApplicationException {
+	public List search(BudgetDTO dto, int pageNo, int pageSize) throws ApplicationException {
 		// TODO Auto-generated method stub
 		Session session = null;
 		List list = null;
 		try {
 			session = HibDataSource.getSession();
-			Criteria criteria = session.createCriteria(ScheduleDTO.class);
+			Criteria criteria = session.createCriteria(BudgetDTO.class);
 
 			if (dto.getId() > 0) {
 				criteria.add(Restrictions.eq("id", dto.getId()));
 			}
-			if (dto.getScheduleName() != null && dto.getScheduleName().length() > 0) {
-				criteria.add(Restrictions.like("scheduleName", dto.getScheduleName() + "%"));
+			if (dto.getAllocatedAmount() != null ) {
+				criteria.add(Restrictions.eq("allocatedAmount", dto.getAllocatedAmount()));
 			}
-			if (dto.getScheduleCode() != null && dto.getScheduleCode().length() > 0) {
-				criteria.add(Restrictions.like("scheduleCode", dto.getScheduleCode() + "%"));
+			if (dto.getSpentAmount() != null) {
+				criteria.add(Restrictions.eq("spentAmount", dto.getSpentAmount()));
 			}
-			if (dto.getScheduleStatus() != null && dto.getScheduleStatus().length() > 0) {
-				criteria.add(Restrictions.like("scheduleStatus", dto.getScheduleStatus() + "%"));
-			}
-			if(dto.getScheduledTime() !=null && dto.getScheduledTime().getDate()>0) {
-				criteria.add(Restrictions.like("scheduledTime",dto.getScheduledTime()));
+
+			if(dto.getDepartment() !=null && dto.getDepartment().length()>0) {
+				criteria.add(Restrictions.like("department",dto.getDepartment()));
 			}
 
 			// if page size is greater than zero the apply pagination
@@ -206,3 +204,4 @@ public class ScheduleModelHibImp implements ScheduleModelInt{
 	}
 
 }
+

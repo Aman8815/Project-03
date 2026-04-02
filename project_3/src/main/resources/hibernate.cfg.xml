@@ -58,6 +58,12 @@
 			<mapping resource="in/co/rays/project_3/hbm/RefundDTO.hbm.xml"/>
 			
 			<mapping resource="in/co/rays/project_3/hbm/ScheduleDTO.hbm.xml"/>
+			
+			<mapping resource="in/co/rays/project_3/hbm/CarRentalDTO.hbm.xml"/>
+			
+			 <mapping resource="in/co/rays/project_3/hbm/BudgetDTO.hbm.xml"/>
+			 
+			  <mapping resource="in/co/rays/project_3/hbm/LoanDTO.hbm.xml"/>
 
 	</session-factory>
 </hibernate-configuration>

@@ -61,6 +61,15 @@ public interface ORSView {
 	
 	public String SCHEDULE_VIEW = PAGE_FOLDER+"/ScheduleView.jsp";
 	public String SCHEDULE_LIST_VIEW = PAGE_FOLDER +"/ScheduleListView.jsp";
+	
+	public String CAR_RENTAL_VIEW = PAGE_FOLDER+"/CarRentalView.jsp";
+	public String CAR_RENTAL_LIST_VIEW = PAGE_FOLDER +"/CarRentalListView.jsp";
+	
+	public String BUDGET_VIEW = PAGE_FOLDER+"/BudgetView.jsp";
+	public String BUDGET_LIST_VIEW = PAGE_FOLDER+"/BudgetListView.jsp";
+	
+	public String LOAN_VIEW = PAGE_FOLDER+"/LoanView.jsp";
+	public String LOAN_LIST_VIEW = PAGE_FOLDER+"/LoanListView.jsp";
 
 	public String ERROR_CTL = APP_CONTEXT + "/ErrorCtl";
 
@@ -111,5 +120,14 @@ public interface ORSView {
 	
 	public String SCHEDULE_CTL = APP_CONTEXT+"/ctl/ScheduleCtl";
 	public String SCHEDULE_LIST_CTL = APP_CONTEXT+"/ctl/ScheduleListCtl";
+	
+	public String CAR_RENTAL_CTL = APP_CONTEXT +"/ctl/CarRentalCtl";
+	public String CAR_RENTAL_LIST_CTL = APP_CONTEXT +"/ctl/CarRentalListCtl";
+	
+	public String BUDGET_CTL = APP_CONTEXT+"/ctl/BudgetCtl";
+	public String BUDGET_LIST_CTL = APP_CONTEXT+"/ctl/BudgetListCtl";
+	
+	public String LOAN_CTL = APP_CONTEXT+"/ctl/LoanCtl";
+	public String LOAN_LIST_CTL = APP_CONTEXT+"/ctl/LoanListCtl";
 
 }

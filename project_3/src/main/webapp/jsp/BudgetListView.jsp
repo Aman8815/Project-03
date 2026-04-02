@@ -1,3 +1,7 @@
+<%@page import="in.co.rays.project_3.controller.BudgetListCtl"%>
+<%@page import="in.co.rays.project_3.dto.BudgetDTO"%>
+<%@page import="in.co.rays.project_3.controller.CarRentalListCtl"%>
+<%@page import="in.co.rays.project_3.dto.CarRentalDTO"%>
 <%@page import="in.co.rays.project_3.controller.ScheduleListCtl"%>
 <%@page import="in.co.rays.project_3.dto.ScheduleDTO"%>
 <%@page import="in.co.rays.project_3.dto.MeetingRoomDTO"%>
@@ -16,7 +20,7 @@
 
 <html>
 <head>
-<title>Schedule List View</title>
+<title>Budget List View</title>
 
 <script src="<%=ORSView.APP_CONTEXT%>/js/jquery.min.js"></script>
 
@@ -42,9 +46,9 @@
 
 	<%@include file="Header.jsp"%>
 
-	<form action="<%=ORSView.SCHEDULE_LIST_CTL%>" method="post">
+	<form action="<%=ORSView.BUDGET_LIST_CTL%>" method="post">
 
-		<jsp:useBean id="dto" class="in.co.rays.project_3.dto.ScheduleDTO"
+		<jsp:useBean id="dto" class="in.co.rays.project_3.dto.BudgetDTO"
 			scope="request"></jsp:useBean>
 
 		<%
@@ -63,7 +67,7 @@
 
 			/* SAFE list */
 			List list = ServletUtility.getList(request);
-			Iterator<ScheduleDTO> it = null;
+			Iterator<BudgetDTO> it = null;
 
 			if (list != null) {
 				it = list.iterator();
@@ -76,7 +80,7 @@
 
 		<center>
 			<h1 class="text-light font-weight-bold pt-2">
-				<font color="black">Schedule List</font>
+				<font color="black">Budget List</font>
 			</h1>
 		</center>
 	<div class="row">
@@ -124,9 +128,9 @@
 			</div>
 
 			<div class="col-sm-3">
-            <input type="text" name="scheduleName" placeholder="Enter scheduleName"
+            <input type="text" name="allocatedAmount" placeholder="Enter allocated Amount"
 						class="form-control"
-						value="<%=ServletUtility.getParameter("scheduleName", request)%>">
+						value="<%=ServletUtility.getParameter("allocatedAmount", request)%>">
 
 			</div>
 		<%-- 	<div class="col-sm-2">
@@ -138,9 +142,9 @@
 			<div class="col-sm-2">
 
 				<input type="submit" class="btn btn-primary" name="operation"
-					value="<%=ScheduleListCtl.OP_SEARCH%>"> <input
+					value="<%=BudgetListCtl.OP_SEARCH%>"> <input
 					type="submit" class="btn btn-dark" name="operation"
-					value="<%=ScheduleListCtl.OP_RESET%>">
+					value="<%=BudgetListCtl.OP_RESET%>">
 
 			</div>
 
@@ -162,10 +166,9 @@
 								name="Select" class="text"> Select All</th>
 
 						<th class="text">S.NO</th>
-						<th class="text">Schedule Code</th>
-						<th class="text">Schedule Name</th>
-						<th class="text">Schedule Time</th>
-						<th class="text">Schedule Status</th>
+						<th class="text">Allocated Amount</th>
+						<th class="text">Spent Amount</th>
+						<th class="text">Department</th>
 						<th class="text">Edit</th>
 
 					</tr>
@@ -186,13 +189,12 @@
 							value="<%=dto.getId()%>"></td>
 
 						<td align="center"><%=index++%></td>
-						<td align="center"><%=dto.getScheduleCode()%></td>
-						<td align="center"><%=dto.getScheduleName()%></td>
-						<td align="center"><%=dto.getScheduledTime()%></td>
-						<td align="center"><%=dto.getScheduleStatus()%></td>
+						<td align="center"><%=dto.getAllocatedAmount()%></td>
+						<td align="center"><%=dto.getSpentAmount()%></td>
+						<td align="center"><%=dto.getDepartment()%></td>
 
 						<td align="center"><a
-							href="ScheduleCtl?id=<%=dto.getId()%>">Edit</a></td>
+							href="BudgetCtl?id=<%=dto.getId()%>">Edit</a></td>
 
 					</tr>
 
@@ -211,18 +213,18 @@
 			<tr>
 					<td><input type="submit" name="operation"
 						class="btn btn-warning btn-md" style="font-size: 17px"
-						value="<%=ScheduleListCtl.OP_PREVIOUS%>"
+						value="<%=BudgetListCtl.OP_PREVIOUS%>"
 						<%=pageNo > 1 ? "" : "disabled"%>></td>
 					<td><input type="submit" name="operation"
 						class="btn btn-primary btn-md" style="font-size: 17px"
-						value="<%=ScheduleListCtl.OP_NEW%>"></td>
+						value="<%=BudgetListCtl.OP_NEW%>"></td>
 					<td><input type="submit" name="operation"
 						class="btn btn-danger btn-md" style="font-size: 17px"
-						value="<%=ScheduleListCtl.OP_DELETE%>"></td>
+						value="<%=BudgetListCtl.OP_DELETE%>"></td>
 
 					<td align="right"><input type="submit" name="operation"
 						class="btn btn-warning btn-md" style="font-size: 17px"
-						style="padding: 5px;" value="<%=ScheduleListCtl.OP_NEXT%>"
+						style="padding: 5px;" value="<%=BudgetListCtl.OP_NEXT%>"
 						<%=(nextPageSize != 0) ? "" : "disabled"%>></td>
 				</tr>
 
@@ -233,10 +235,10 @@
 		%>
 
 		<center>
-			<h2>Schedule List Not Found</h2>
+			<h2>Budget List Not Found</h2>
 			<div style="padding-left: 48%;">
 				<input type="submit" name="operation" class="btn btn-primary btn-md"
-					style="font-size: 17px" value="<%=ScheduleListCtl.OP_BACK%>">
+					style="font-size: 17px" value="<%=BudgetListCtl.OP_BACK%>">
 			</div>
 		</center>
 

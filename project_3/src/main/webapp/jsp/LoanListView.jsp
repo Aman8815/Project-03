@@ -1,5 +1,7 @@
-<%@page import="in.co.rays.project_3.controller.ScheduleListCtl"%>
-<%@page import="in.co.rays.project_3.dto.ScheduleDTO"%>
+<%@page import="in.co.rays.project_3.controller.LoanListCtl"%>
+<%@page import="in.co.rays.project_3.dto.LoanDTO"%>
+<%@page import="in.co.rays.project_3.controller.ComplaintListCtl"%>
+<%@page import="in.co.rays.project_3.dto.ComplaintDTO"%>
 <%@page import="in.co.rays.project_3.dto.MeetingRoomDTO"%>
 <%@page import="in.co.rays.project_3.controller.MeetingRoomListCtl"%>
 <%@page import="in.co.rays.project_3.dto.OnlineCourseDTO"%>
@@ -16,7 +18,7 @@
 
 <html>
 <head>
-<title>Schedule List View</title>
+<title>Loan List View</title>
 
 <script src="<%=ORSView.APP_CONTEXT%>/js/jquery.min.js"></script>
 
@@ -42,9 +44,9 @@
 
 	<%@include file="Header.jsp"%>
 
-	<form action="<%=ORSView.SCHEDULE_LIST_CTL%>" method="post">
+	<form action="<%=ORSView.LOAN_LIST_CTL%>" method="post">
 
-		<jsp:useBean id="dto" class="in.co.rays.project_3.dto.ScheduleDTO"
+		<jsp:useBean id="dto" class="in.co.rays.project_3.dto.LoanDTO"
 			scope="request"></jsp:useBean>
 
 		<%
@@ -63,7 +65,7 @@
 
 			/* SAFE list */
 			List list = ServletUtility.getList(request);
-			Iterator<ScheduleDTO> it = null;
+			Iterator<LoanDTO> it = null;
 
 			if (list != null) {
 				it = list.iterator();
@@ -76,10 +78,10 @@
 
 		<center>
 			<h1 class="text-light font-weight-bold pt-2">
-				<font color="black">Schedule List</font>
+				<font color="black">Loan List</font>
 			</h1>
 		</center>
-	<div class="row">
+		<div class="row">
 				<div class="col-md-4"></div>
 				<%
 					if (!ServletUtility.getSuccessMessage(request).equals("")) {
@@ -124,23 +126,18 @@
 			</div>
 
 			<div class="col-sm-3">
-            <input type="text" name="scheduleName" placeholder="Enter scheduleName"
+            <input type="text" name="lenderName" placeholder="Enter loanAmount"
 						class="form-control"
-						value="<%=ServletUtility.getParameter("scheduleName", request)%>">
+						value="<%=ServletUtility.getParameter("loanAmount", request)%>">
 
 			</div>
-		<%-- 	<div class="col-sm-2">
-			<input type="text" name="scheduledTime" placeholder="Enter Schedule time"
-			    class="form-control"
-			    value="<%=ServletUtility.getParameter("scheduledTime", request)%>">
-			</div> --%>
 
 			<div class="col-sm-2">
 
 				<input type="submit" class="btn btn-primary" name="operation"
-					value="<%=ScheduleListCtl.OP_SEARCH%>"> <input
+					value="<%=LoanListCtl.OP_SEARCH%>"> <input
 					type="submit" class="btn btn-dark" name="operation"
-					value="<%=ScheduleListCtl.OP_RESET%>">
+					value="<%=LoanListCtl.OP_RESET%>">
 
 			</div>
 
@@ -156,16 +153,16 @@
 
 				<thead>
 
-					<tr style="background-color: skyblue;">
+					<tr>
 
-						<th width="10%"><input type="checkbox" id="select_all"
-								name="Select" class="text"> Select All</th>
+						<th width="10%"><input type="checkbox" id="select_all">
+							Select All</th>
 
 						<th class="text">S.NO</th>
-						<th class="text">Schedule Code</th>
-						<th class="text">Schedule Name</th>
-						<th class="text">Schedule Time</th>
-						<th class="text">Schedule Status</th>
+						<th class="text">Lender Name</th>
+						<th class="text">Loan Amount</th>
+						<th class="text">Interest Rate</th>
+						<th class="text">Maturity Date</th>
 						<th class="text">Edit</th>
 
 					</tr>
@@ -182,17 +179,17 @@
 
 					<tr>
 
-						<td align="center"><input type="checkbox" name="ids" class="checkbox"
+						<td align="center"><input type="checkbox" class="checkbox" name="ids"
 							value="<%=dto.getId()%>"></td>
 
 						<td align="center"><%=index++%></td>
-						<td align="center"><%=dto.getScheduleCode()%></td>
-						<td align="center"><%=dto.getScheduleName()%></td>
-						<td align="center"><%=dto.getScheduledTime()%></td>
-						<td align="center"><%=dto.getScheduleStatus()%></td>
+						<td align="center"><%=dto.getLenderName()%></td>
+						<td align="center"><%=dto.getLoanAmount()%></td>
+						<td align="center"><%=dto.getInterestRate()%></td>
+						<td align="center"><%=dto.getMaturityDate()%></td>
 
 						<td align="center"><a
-							href="ScheduleCtl?id=<%=dto.getId()%>">Edit</a></td>
+							href="LoanCtl?id=<%=dto.getId()%>">Edit</a></td>
 
 					</tr>
 
@@ -211,18 +208,18 @@
 			<tr>
 					<td><input type="submit" name="operation"
 						class="btn btn-warning btn-md" style="font-size: 17px"
-						value="<%=ScheduleListCtl.OP_PREVIOUS%>"
+						value="<%=LoanListCtl.OP_PREVIOUS%>"
 						<%=pageNo > 1 ? "" : "disabled"%>></td>
 					<td><input type="submit" name="operation"
 						class="btn btn-primary btn-md" style="font-size: 17px"
-						value="<%=ScheduleListCtl.OP_NEW%>"></td>
+						value="<%=LoanListCtl.OP_NEW%>"></td>
 					<td><input type="submit" name="operation"
 						class="btn btn-danger btn-md" style="font-size: 17px"
-						value="<%=ScheduleListCtl.OP_DELETE%>"></td>
+						value="<%=LoanListCtl.OP_DELETE%>"></td>
 
 					<td align="right"><input type="submit" name="operation"
 						class="btn btn-warning btn-md" style="font-size: 17px"
-						style="padding: 5px;" value="<%=ScheduleListCtl.OP_NEXT%>"
+						style="padding: 5px;" value="<%=LoanListCtl.OP_NEXT%>"
 						<%=(nextPageSize != 0) ? "" : "disabled"%>></td>
 				</tr>
 
@@ -233,10 +230,10 @@
 		%>
 
 		<center>
-			<h2>Schedule List Not Found</h2>
+			<h2>Loan List Not Found</h2>
 			<div style="padding-left: 48%;">
 				<input type="submit" name="operation" class="btn btn-primary btn-md"
-					style="font-size: 17px" value="<%=ScheduleListCtl.OP_BACK%>">
+					style="font-size: 17px" value="<%=LoanListCtl.OP_BACK%>">
 			</div>
 		</center>
 

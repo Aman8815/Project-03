@@ -235,13 +235,13 @@
 					<li class="nav-item dropdown" style="padding-left: 4px;"><a
 					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 					role="button" data-toggle="dropdown" aria-haspopup="true"
-					aria-expanded="false"> <font style="color: white;">Complaint</font>
+					aria-expanded="false"> <font style="color: white;">Loan</font>
 				</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="<%=ORSView.COMPLAINT_CTL%>"><i
-							class="fa fa-user-circle"></i>Add Complaint</a> <a
-							class="dropdown-item" href="<%=ORSView.COMPLAINT_LIST_CTL%>"><i
-							class="fa fa-user-friends"></i>Complaint List</a>
+						<a class="dropdown-item" href="<%=ORSView.LOAN_CTL%>"><i
+							class="fa fa-user-circle"></i>Add Loan</a> <a
+							class="dropdown-item" href="<%=ORSView.LOAN_LIST_CTL%>"><i
+							class="fa fa-user-friends"></i>Loan List</a>
 					</div></li>
 					
 					

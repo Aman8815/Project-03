@@ -8,21 +8,21 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 
-import in.co.rays.project_3.dto.ScheduleDTO;
+import in.co.rays.project_3.dto.CarRentalDTO;
 import in.co.rays.project_3.exception.ApplicationException;
 import in.co.rays.project_3.exception.DuplicateRecordException;
 import in.co.rays.project_3.util.HibDataSource;
 
-public class ScheduleModelHibImp implements ScheduleModelInt{
-
-	public long add(ScheduleDTO dto) throws ApplicationException, DuplicateRecordException {
+public class CarRentalModelHibImp implements CarRentalModelInt {
+	
+	public long add(CarRentalDTO dto) throws ApplicationException, DuplicateRecordException {
 		// TODO Auto-generated method stub
 		Session session = null;
 		Transaction tx = null;
 		long pk = 0;
-		ScheduleDTO existDto = findByName(dto.getScheduleCode());
+		CarRentalDTO existDto = findByName(dto.getCarModel());
 		if (existDto != null) {
-			throw new DuplicateRecordException("ScheduleCode already exist");
+			throw new DuplicateRecordException("Customer code already exist");
 		}
 		try {
 			session = HibDataSource.getSession();
@@ -45,7 +45,7 @@ public class ScheduleModelHibImp implements ScheduleModelInt{
 		return pk;
 	}
 
-	public void delete(ScheduleDTO dto) throws ApplicationException {
+	public void delete(CarRentalDTO dto) throws ApplicationException {
 		// TODO Auto-generated method stub
 		Session session = null;
 		Transaction tx = null;
@@ -67,7 +67,7 @@ public class ScheduleModelHibImp implements ScheduleModelInt{
 		}
 	}
 
-	public void update(ScheduleDTO dto) throws ApplicationException, DuplicateRecordException {
+	public void update(CarRentalDTO dto) throws ApplicationException, DuplicateRecordException {
 		// TODO Auto-generated method stub
 		Session session = null;
 		Transaction tx = null;
@@ -91,15 +91,15 @@ public class ScheduleModelHibImp implements ScheduleModelInt{
 
 	}
 
-	public ScheduleDTO findByPK(long pk) throws ApplicationException {
+	public CarRentalDTO findByPK(long pk) throws ApplicationException {
 		// TODO Auto-generated method stub
 		System.out.println("======" + pk);
 		Session session = null;
-		ScheduleDTO dto = null;
+		CarRentalDTO dto = null;
 		try {
 			session = HibDataSource.getSession();
 
-			dto = (ScheduleDTO) session.get(ScheduleDTO.class, pk);
+			dto = (CarRentalDTO) session.get(CarRentalDTO.class, pk);
 		} catch (HibernateException e) {
 
 			throw new ApplicationException("Exception : Exception in getting course by pk");
@@ -110,17 +110,17 @@ public class ScheduleModelHibImp implements ScheduleModelInt{
 		return dto;
 	}
 
-	public ScheduleDTO findByName(String name) throws ApplicationException {
+	public CarRentalDTO findByName(String name) throws ApplicationException {
 		// TODO Auto-generated method stub
 		Session session = null;
-		ScheduleDTO dto = null;
+		CarRentalDTO dto = null;
 		try {
 			session = HibDataSource.getSession();
-			Criteria criteria = session.createCriteria(ScheduleDTO.class);
-			criteria.add(Restrictions.eq("scheduleCode", name));
+			Criteria criteria = session.createCriteria(CarRentalDTO.class);
+			criteria.add(Restrictions.eq("returnDate", name));
 			List list = criteria.list();
 			if (list.size() > 0) {
-				dto = (ScheduleDTO) list.get(0);
+				dto = (CarRentalDTO) list.get(0);
 			}
 		} catch (HibernateException e) {
 
@@ -143,7 +143,7 @@ public class ScheduleModelHibImp implements ScheduleModelInt{
 		List list = null;
 		try {
 			session = HibDataSource.getSession();
-			Criteria criteria = session.createCriteria(ScheduleDTO.class);
+			Criteria criteria = session.createCriteria(CarRentalDTO.class);
 			if (pageSize > 0) {
 				pageNo = ((pageNo - 1) * pageSize) + 1;
 				criteria.setFirstResult(pageNo);
@@ -159,33 +159,33 @@ public class ScheduleModelHibImp implements ScheduleModelInt{
 		return list;
 	}
 
-	public List search(ScheduleDTO dto) throws ApplicationException {
+	public List search(CarRentalDTO dto) throws ApplicationException {
 		// TODO Auto-generated method stub
 		return search(dto, 0, 0);
 	}
 
-	public List search(ScheduleDTO dto, int pageNo, int pageSize) throws ApplicationException {
+	public List search(CarRentalDTO dto, int pageNo, int pageSize) throws ApplicationException {
 		// TODO Auto-generated method stub
 		Session session = null;
 		List list = null;
 		try {
 			session = HibDataSource.getSession();
-			Criteria criteria = session.createCriteria(ScheduleDTO.class);
+			Criteria criteria = session.createCriteria(CarRentalDTO.class);
 
 			if (dto.getId() > 0) {
 				criteria.add(Restrictions.eq("id", dto.getId()));
 			}
-			if (dto.getScheduleName() != null && dto.getScheduleName().length() > 0) {
-				criteria.add(Restrictions.like("scheduleName", dto.getScheduleName() + "%"));
+			if (dto.getCarModel() != null && dto.getCarModel().length() > 0) {
+				criteria.add(Restrictions.like("carModel", dto.getCarModel() + "%"));
 			}
-			if (dto.getScheduleCode() != null && dto.getScheduleCode().length() > 0) {
-				criteria.add(Restrictions.like("scheduleCode", dto.getScheduleCode() + "%"));
+			if (dto.getCustomerName() != null && dto.getCustomerName().length() > 0) {
+				criteria.add(Restrictions.like("customerName", dto.getCustomerName() + "%"));
 			}
-			if (dto.getScheduleStatus() != null && dto.getScheduleStatus().length() > 0) {
-				criteria.add(Restrictions.like("scheduleStatus", dto.getScheduleStatus() + "%"));
+			if (dto.getRentalDate() != null && dto.getRentalDate().getDate() > 0) {
+				criteria.add(Restrictions.like("rentalDate", dto.getRentalDate() + "%"));
 			}
-			if(dto.getScheduledTime() !=null && dto.getScheduledTime().getDate()>0) {
-				criteria.add(Restrictions.like("scheduledTime",dto.getScheduledTime()));
+			if(dto.getReturnDate() !=null && dto.getReturnDate().length()>0) {
+				criteria.add(Restrictions.like("returnDate",dto.getReturnDate()));
 			}
 
 			// if page size is greater than zero the apply pagination
@@ -206,3 +206,4 @@ public class ScheduleModelHibImp implements ScheduleModelInt{
 	}
 
 }
+

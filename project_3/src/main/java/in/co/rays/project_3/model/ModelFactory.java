@@ -272,4 +272,49 @@ public final class ModelFactory {
 		}
 		return ScheduleModel;
 	}
+	
+	public CarRentalModelInt getCarRentalModel() {
+		CarRentalModelInt CarRentalModel = (CarRentalModelInt) modelCache.get("CarRentalModel");
+		if(CarRentalModel == null) {
+			if("Hibernate".equals(DATABASE)) {
+				CarRentalModel = new CarRentalModelHibImp();
+			}
+			if("JDBC".equals(DATABASE)){
+				CarRentalModel = new CarRentalModelHibImp();
+			}
+			
+			modelCache.put("CarRentalModel", CarRentalModel);
+		}
+		return CarRentalModel;
+	}
+	
+	public BudgetModelInt getBudgetModel() {
+		BudgetModelInt BudgetModel = (BudgetModelInt) modelCache.get("BudgetModel");
+		if(BudgetModel == null) {
+			if("Hibernate".equals(DATABASE)) {
+				BudgetModel = new BudgetModelHibImp();
+			}
+			if("JDBC".equals(DATABASE)){
+				BudgetModel = new BudgetModelHibImp();
+			}
+			
+			modelCache.put("BudgetModel", BudgetModel);
+		}
+		return BudgetModel;
+	}
+	
+	public LoanModelInt getLoanModel() {
+		LoanModelInt LoanModel = (LoanModelInt) modelCache.get("LoanModel");
+		if(LoanModel == null) {
+			if("Hibernate".equals(DATABASE)) {
+				LoanModel = new LoanModelHibImp();
+			}
+			if("JDBC".equals(DATABASE)){
+				LoanModel = new LoanModelHibImp();
+			}
+			
+			modelCache.put("BudgetModel", LoanModel);
+		}
+		return LoanModel;
+	}
 }
