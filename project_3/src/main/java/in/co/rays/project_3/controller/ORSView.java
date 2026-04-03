@@ -70,6 +70,9 @@ public interface ORSView {
 	
 	public String LOAN_VIEW = PAGE_FOLDER+"/LoanView.jsp";
 	public String LOAN_LIST_VIEW = PAGE_FOLDER+"/LoanListView.jsp";
+	
+	public String PRESS_VIEW = PAGE_FOLDER+"/PressView.jsp";
+	public String PRESS_LIST_VIEW = PAGE_FOLDER+"/PressListView.jsp";
 
 	public String ERROR_CTL = APP_CONTEXT + "/ErrorCtl";
 
@@ -130,4 +133,6 @@ public interface ORSView {
 	public String LOAN_CTL = APP_CONTEXT+"/ctl/LoanCtl";
 	public String LOAN_LIST_CTL = APP_CONTEXT+"/ctl/LoanListCtl";
 
+	public String PRESS_CTL = APP_CONTEXT +"/ctl/PressCtl";
+	public String PRESS_LIST_CTL = APP_CONTEXT+"/ctl/PressListCtl";
 }

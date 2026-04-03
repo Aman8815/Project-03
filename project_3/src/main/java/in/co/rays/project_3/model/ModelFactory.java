@@ -317,4 +317,19 @@ public final class ModelFactory {
 		}
 		return LoanModel;
 	}
+	
+	public PressModelInt getPressModel() {
+		PressModelInt PressModel = (PressModelInt) modelCache.get("PressModel");
+		if(PressModel == null) {
+			if("Hibernate".equals(DATABASE)) {
+				PressModel = new PressModelHibImp();
+			}
+			if("JDBC".equals(DATABASE)){
+				PressModel = new PressModelHibImp();
+			}
+			
+			modelCache.put("PressModel", PressModel);
+		}
+		return PressModel;
+	}
 }
