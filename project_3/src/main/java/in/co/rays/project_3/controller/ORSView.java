@@ -73,6 +73,12 @@ public interface ORSView {
 	
 	public String PRESS_VIEW = PAGE_FOLDER+"/PressView.jsp";
 	public String PRESS_LIST_VIEW = PAGE_FOLDER+"/PressListView.jsp";
+	
+	public String RETURN_VIEW = PAGE_FOLDER+"/ReturnView.jsp";
+	public String RETURN_LIST_VIEW = PAGE_FOLDER+"/ReturnListView.jsp";
+	
+	public String DECORATION_VIEW = PAGE_FOLDER+"/DecorationView.jsp";
+	public String DECORATION_LIST_VIEW = PAGE_FOLDER+"/DecorationListView.jsp";
 
 	public String ERROR_CTL = APP_CONTEXT + "/ErrorCtl";
 
@@ -135,4 +141,10 @@ public interface ORSView {
 
 	public String PRESS_CTL = APP_CONTEXT +"/ctl/PressCtl";
 	public String PRESS_LIST_CTL = APP_CONTEXT+"/ctl/PressListCtl";
+	
+	public String RETURN_CTL = APP_CONTEXT+"/ctl/ReturnCtl";
+	public String RETURN_LIST_CTL = APP_CONTEXT+"/ctl/ReturnListCtl";
+	
+	public String DECORATION_CTL = APP_CONTEXT+"/ctl/DecorationCtl";
+	public String DECORATION_LIST_CTL = APP_CONTEXT+"/ctl/DecorationListCtl";
 }

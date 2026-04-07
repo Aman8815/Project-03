@@ -1,0 +1,145 @@
+package in.co.rays.project_3.controller;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.apache.log4j.Logger;
+import in.co.rays.project_3.dto.BaseDTO;
+import in.co.rays.project_3.dto.DecorationDTO;
+import in.co.rays.project_3.exception.ApplicationException;
+import in.co.rays.project_3.exception.DuplicateRecordException;
+import in.co.rays.project_3.model.CollegeModelInt;
+import in.co.rays.project_3.model.DecorationModelInt;
+import in.co.rays.project_3.model.LoanModelInt;
+import in.co.rays.project_3.model.ModelFactory;
+import in.co.rays.project_3.util.DataUtility;
+import in.co.rays.project_3.util.DataValidator;
+import in.co.rays.project_3.util.PropertyReader;
+import in.co.rays.project_3.util.ServletUtility;
+
+/**
+ * college functionality ctl. To perform add,delete ,update operation
+ * 
+ * @author Aman Yashona
+ * 
+ */
+
+@WebServlet(urlPatterns = { "/ctl/DecorationCtl" })
+public class DecorationCtl extends BaseCtl {
+	private static final long serialVersionUID = 1L;
+	private static Logger log = Logger.getLogger(DecorationCtl.class);
+
+	protected boolean validate(HttpServletRequest request) {
+		boolean pass = true;
+		if (DataValidator.isNull(request.getParameter("vendorName"))) {
+			request.setAttribute("vendorName", PropertyReader.getValue("error.require", "vendorName"));
+			pass = false;
+		} else if (!DataValidator.isName(request.getParameter("vendorName"))) {
+			request.setAttribute("vendorName",PropertyReader.getValue("error.require", "vendorName"));
+			pass = false;
+		}
+		if (DataValidator.isNull(request.getParameter("theme"))) {
+			request.setAttribute("theme", PropertyReader.getValue("error.require", "theme"));
+			pass = false;
+		} 
+		if (DataValidator.isNull(request.getParameter("cost"))) {
+			request.setAttribute("cost", PropertyReader.getValue("error.require", "cost"));
+			pass = false;
+		}
+		
+		return pass;
+	}
+
+	protected BaseDTO populateDTO(HttpServletRequest request) {
+		DecorationDTO dto = new DecorationDTO();
+		dto.setId(DataUtility.getLong(request.getParameter("id")));
+		dto.setVendorName(DataUtility.getString(request.getParameter("vendorName")));
+		dto.setTheme(DataUtility.getString(request.getParameter("theme")));
+		dto.setCost(DataUtility.getLong(request.getParameter("cost")));
+
+		populateBean(dto, request);
+		return dto;
+	}
+
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws IOException, ServletException {
+		String op = request.getParameter("operation");
+		long id = DataUtility.getLong(request.getParameter("id"));
+		DecorationModelInt model = ModelFactory.getInstance().getDecorationModel();
+		if (id > 0 || op != null) {
+			DecorationDTO dto;
+			try {
+				dto = model.findByPK(id);
+				ServletUtility.setDto(dto, request);
+
+			} catch (ApplicationException e) {
+				log.error(e);
+				ServletUtility.handleException(e, request, response);
+				return;
+			}
+
+		}
+		ServletUtility.forward(getView(), request, response);
+	}
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws IOException, ServletException {
+
+		String op = request.getParameter("operation");
+		long id = DataUtility.getLong(request.getParameter("id"));
+
+		DecorationModelInt model = ModelFactory.getInstance().getDecorationModel();
+
+		if (OP_SAVE.equalsIgnoreCase(op) || OP_UPDATE.equalsIgnoreCase(op)) {
+
+			DecorationDTO dto = (DecorationDTO) populateDTO(request);
+
+			try {
+				if (id > 0) {
+					dto.setId(id);
+					model.update(dto);
+					ServletUtility.setDto(dto, request);
+
+					ServletUtility.setSuccessMessage("Record Successfully Updated", request);
+
+				} else {
+					System.out.println("college add" + dto + "id...." + id);
+					// long pk
+					model.add(dto);
+					ServletUtility.setSuccessMessage("Record Successfully Saved", request);
+					ServletUtility.forward(getView(), request, response);
+					return;
+				}
+				ServletUtility.setDto(dto, request);
+			} catch (ApplicationException e) {
+				e.printStackTrace();
+				log.error(e);
+				ServletUtility.handleException(e, request, response);
+				return;
+			} catch (DuplicateRecordException e) {
+				ServletUtility.setDto(dto, request);
+				ServletUtility.setErrorMessage("VENDOR Name Exiest", request);
+			}
+		} else if (OP_RESET.equalsIgnoreCase(op)) {
+			ServletUtility.redirect(ORSView.DECORATION_CTL, request, response);
+			return;
+		} else if (OP_CANCEL.equalsIgnoreCase(op)) {
+
+			ServletUtility.redirect(ORSView.DECORATION_LIST_CTL, request, response);
+			return;
+
+		}
+		ServletUtility.forward(getView(), request, response);
+	}
+
+	@Override
+	protected String getView() {
+		// TODO Auto-generated method stub
+		return ORSView.DECORATION_VIEW;
+	}
+
+}

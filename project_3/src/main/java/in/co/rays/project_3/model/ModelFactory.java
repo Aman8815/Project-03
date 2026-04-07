@@ -332,4 +332,34 @@ public final class ModelFactory {
 		}
 		return PressModel;
 	}
+	
+	public ReturnModelInt getReturnModel() {
+		ReturnModelInt ReturnModel = (ReturnModelInt) modelCache.get("ReturnModel");
+		if(ReturnModel == null) {
+			if("Hibernate".equals(DATABASE)) {
+				ReturnModel = new ReturnModelHibImp();
+			}
+			if("JDBC".equals(DATABASE)){
+				ReturnModel = new ReturnModelHibImp();
+			}
+			
+			modelCache.put("ReturnModel", ReturnModel);
+		}
+		return ReturnModel;
+	}
+	
+	public DecorationModelInt getDecorationModel() {
+		DecorationModelInt DecorationModel = (DecorationModelInt) modelCache.get("DecorationModel");
+		if(DecorationModel == null) {
+			if("Hibernate".equals(DATABASE)) {
+				DecorationModel = new DecorationModelHibImp();
+			}
+			if("JDBC".equals(DATABASE)){
+				DecorationModel = new DecorationModelHibImp();
+			}
+			
+			modelCache.put("DecorationModel", DecorationModel);
+		}
+		return DecorationModel;
+	}
 }

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 07-Apr-2026, 11:28:39 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="in.co.rays.project_3.dto">
+    <class name="in.co.rays.project_3.dto.DecorationDTO" table="ST_DECORATION">
+    <id name="id" type="java.lang.Long">
+    <column name="ID"></column>
+    <generator class="increment"></generator>
+    </id>
+        <property name="theme" type="java.lang.String">
+            <column name="THEME" />
+        </property>
+        <property name="cost" type="java.lang.Long">
+            <column name="COST" />
+        </property>
+        <property name="vendorName" type="java.lang.String">
+            <column name="VENDORNAME" />
+        </property>
+    </class>
+</hibernate-mapping>

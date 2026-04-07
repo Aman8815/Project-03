@@ -66,6 +66,10 @@
 			  <mapping resource="in/co/rays/project_3/hbm/LoanDTO.hbm.xml"/>
 			  
 			  <mapping resource="in/co/rays/project_3/hbm/PressDTO.hbm.xml"/>
+			  
+			   <mapping resource="in/co/rays/project_3/hbm/ReturnDTO.hbm.xml"/>
+			   
+			   <mapping resource="in/co/rays/project_3/hbm/DecorationDTO.hbm.xml"/>
 
 	</session-factory>
 </hibernate-configuration>
