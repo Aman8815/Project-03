@@ -280,20 +280,44 @@
 							class="dropdown-item" href="<%=ORSView.DECORATION_LIST_CTL%>"><i
 							class="fa fa-user-friends"></i>Decoration List</a>
 					</div></li>
-
-				<%--  <li class="nav-item dropdown" style="padding-left: 5px"><a
+					
+							<li class="nav-item dropdown" style="padding-left: 4px;"><a
 					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 					role="button" data-toggle="dropdown" aria-haspopup="true"
-					aria-expanded="false"> <font style="color: white;">Product
+					aria-expanded="false"> <font style="color: white;">SmartParking</font>
+				</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="<%=ORSView.SMARTPARKING_CTL%>"><i
+							class="fa fa-user-circle"></i>Add Parking</a> <a
+							class="dropdown-item" href="<%=ORSView.SMARTPARKING_LIST_CTL%>"><i
+							class="fa fa-user-friends"></i>Parking List</a>
+					</div></li>
+					
+							<li class="nav-item dropdown" style="padding-left: 4px;"><a
+					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+					role="button" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false"> <font style="color: white;">Notification</font>
+				</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="<%=ORSView.NOTIFICATION_CTL%>"><i
+							class="fa fa-user-circle"></i>Add Notification</a> <a
+							class="dropdown-item" href="<%=ORSView.NOTIFICATION_LIST_CTL%>"><i
+							class="fa fa-user-friends"></i>Notification List</a>
+					</div></li>
+
+				 <li class="nav-item dropdown" style="padding-left: 5px"><a
+					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+					role="button" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false"> <font style="color: white;">NFT Asset
 					</font></a>
 
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 
-						<a class="dropdown-item" href="<%=ORSView.PRODUCT_CTL%>"><i
-							class="fa fa-file"></i>Add Product</a> <a class="dropdown-item"
-							href="<%=ORSView.PRODUCT_LIST_CTL%>"><i class="fa fa-paste"></i>Product
+						<a class="dropdown-item" href="<%=ORSView.NFTASSET_CTL%>"><i
+							class="fa fa-user-circle"></i>Add NFT Asset</a> <a class="dropdown-item"
+							href="<%=ORSView.NFTASSET_LIST_CTL%>"><i class="fa fa-user-friends"></i>NFT Asset
 							List</a>
-					</div></li> --%>
+					</div></li>
 
 				<%
 					}

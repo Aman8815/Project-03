@@ -1,5 +1,5 @@
-<%@page import="in.co.rays.project_3.controller.DecorationListCtl"%>
-<%@page import="in.co.rays.project_3.dto.DecorationDTO"%>
+<%@page import="in.co.rays.project_3.controller.SmartParkingListCtl"%>
+<%@page import="in.co.rays.project_3.dto.SmartParkingDTO"%>
 <%@page import="in.co.rays.project_3.controller.LoanListCtl"%>
 <%@page import="in.co.rays.project_3.dto.LoanDTO"%>
 <%@page import="in.co.rays.project_3.controller.ComplaintListCtl"%>
@@ -20,7 +20,7 @@
 
 <html>
 <head>
-<title>Decoration List View</title>
+<title>Parking List View</title>
 
 <script src="<%=ORSView.APP_CONTEXT%>/js/jquery.min.js"></script>
 
@@ -46,9 +46,9 @@
 
 	<%@include file="Header.jsp"%>
 
-	<form action="<%=ORSView.DECORATION_LIST_CTL%>" method="post">
+	<form action="<%=ORSView.SMARTPARKING_LIST_CTL%>" method="post">
 
-		<jsp:useBean id="dto" class="in.co.rays.project_3.dto.DecorationDTO"
+		<jsp:useBean id="dto" class="in.co.rays.project_3.dto.SmartParkingDTO"
 			scope="request"></jsp:useBean>
 
 		<%
@@ -67,7 +67,7 @@
 
 			/* SAFE list */
 			List list = ServletUtility.getList(request);
-			Iterator<DecorationDTO> it = null;
+			Iterator<SmartParkingDTO> it = null;
 
 			if (list != null) {
 				it = list.iterator();
@@ -80,7 +80,7 @@
 
 		<center>
 			<h1 class="text-light font-weight-bold pt-2">
-				<font color="black">Decoration List</font>
+				<font color="black">Parking List</font>
 			</h1>
 		</center>
 		<div class="row">
@@ -128,18 +128,18 @@
 			</div>
 
 			<div class="col-sm-3">
-            <input type="text" name="cost" placeholder="Enter cost"
+            <input type="text" name="slotNumber" placeholder="Enter slotNumber"
 						class="form-control"
-						value="<%=ServletUtility.getParameter("cost", request)%>">
+						value="<%=ServletUtility.getParameter("slotNumber", request)%>">
 
 			</div>
 
 			<div class="col-sm-2">
 
 				<input type="submit" class="btn btn-primary" name="operation"
-					value="<%=DecorationListCtl.OP_SEARCH%>"> <input
+					value="<%=SmartParkingListCtl.OP_SEARCH%>"> <input
 					type="submit" class="btn btn-dark" name="operation"
-					value="<%=DecorationListCtl.OP_RESET%>">
+					value="<%=SmartParkingListCtl.OP_RESET%>">
 
 			</div>
 
@@ -161,9 +161,10 @@
 							Select All</th>
 
 						<th class="text">S.NO</th>
-						<th class="text">Vendor Name</th>
-						<th class="text">Theme</th>
-						<th class="text">Cost</th>
+						<th class="text">Parking Code</th>
+						<th class="text">Vehicle Number</th>
+						<th class="text">Slot Number</th>
+						<th class="text">Status</th>
 						<th class="text">Edit</th>
 
 					</tr>
@@ -184,11 +185,13 @@
 							value="<%=dto.getId()%>"></td>
 
 						<td align="center"><%=index++%></td>
-						<td align="center"><%=dto.getVendorName()%></td>
-						<td align="center"><%=dto.getTheme()%></td>
-						<td align="center"><%=dto.getCost()%></td>
+						<td align="center"><%=dto.getParkingCode()%></td>
+						<td align="center"><%=dto.getVehicleNumber()%></td>
+						<td align="center"><%=dto.getSlotNumber()%></td>
+						<td align="center"><%=dto.getStatus()%></td>
+
 						<td align="center"><a
-							href="DecorationCtl?id=<%=dto.getId()%>">Edit</a></td>
+							href="SmartParkingCtl?id=<%=dto.getId()%>">Edit</a></td>
 
 					</tr>
 
@@ -207,18 +210,18 @@
 			<tr>
 					<td><input type="submit" name="operation"
 						class="btn btn-warning btn-md" style="font-size: 17px"
-						value="<%=DecorationListCtl.OP_PREVIOUS%>"
+						value="<%=SmartParkingListCtl.OP_PREVIOUS%>"
 						<%=pageNo > 1 ? "" : "disabled"%>></td>
 					<td><input type="submit" name="operation"
 						class="btn btn-primary btn-md" style="font-size: 17px"
-						value="<%=DecorationListCtl.OP_NEW%>"></td>
+						value="<%=SmartParkingListCtl.OP_NEW%>"></td>
 					<td><input type="submit" name="operation"
 						class="btn btn-danger btn-md" style="font-size: 17px"
-						value="<%=DecorationListCtl.OP_DELETE%>"></td>
+						value="<%=SmartParkingListCtl.OP_DELETE%>"></td>
 
 					<td align="right"><input type="submit" name="operation"
 						class="btn btn-warning btn-md" style="font-size: 17px"
-						style="padding: 5px;" value="<%=DecorationListCtl.OP_NEXT%>"
+						style="padding: 5px;" value="<%=SmartParkingListCtl.OP_NEXT%>"
 						<%=(nextPageSize != 0) ? "" : "disabled"%>></td>
 				</tr>
 
@@ -229,10 +232,10 @@
 		%>
 
 		<center>
-			<h2>Decoration List Not Found</h2>
+			<h2>Parking List Not Found</h2>
 			<div style="padding-left: 48%;">
 				<input type="submit" name="operation" class="btn btn-primary btn-md"
-					style="font-size: 17px" value="<%=DecorationListCtl.OP_BACK%>">
+					style="font-size: 17px" value="<%=SmartParkingListCtl.OP_BACK%>">
 			</div>
 		</center>
 

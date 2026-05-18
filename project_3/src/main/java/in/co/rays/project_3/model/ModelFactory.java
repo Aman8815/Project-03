@@ -362,4 +362,66 @@ public final class ModelFactory {
 		}
 		return DecorationModel;
 	}
+	
+	public NotificationModelInt getNotificationModel() {
+		NotificationModelInt NotificationModel = (NotificationModelInt) modelCache.get("NotificationModel");
+		if(NotificationModel == null) {
+			if("Hibernate".equals(DATABASE)) {
+				NotificationModel = new NotificationModelHibImp();
+			}
+			if("JDBC".equals(DATABASE)){
+				NotificationModel = new NotificationModelHibImp();
+			}
+			
+			modelCache.put("NotificationModel", NotificationModel);
+		}
+		return NotificationModel;
+	}
+	
+	public SmartParkingModelInt getSmartParkingModel() {
+		SmartParkingModelInt SmartParkingModel = (SmartParkingModelInt) modelCache.get("SmartParkingModel");
+		if(SmartParkingModel == null) {
+			if("Hibernate".equals(DATABASE)) {
+				SmartParkingModel = new SmartParkingModelHibImp();
+			}
+			if("JDBC".equals(DATABASE)){
+				SmartParkingModel = new SmartParkingModelHibImp();
+			}
+			
+			modelCache.put("SmartParkingModel", SmartParkingModel);
+		}
+		return SmartParkingModel;
+	}
+	
+	public PodcastModelInt getPodcastModel() {
+		PodcastModelInt PodcastModel = (PodcastModelInt) modelCache.get("PodcastModel");
+		if(PodcastModel == null) {
+			if("Hibernate".equals(DATABASE)) {
+				PodcastModel = new PodcastModelHibImp();
+			}
+			if("JDBC".equals(DATABASE)){
+				PodcastModel = new PodcastModelHibImp();
+			}
+			
+			modelCache.put("PodcastModel", PodcastModel);
+		}
+		return PodcastModel;
+	}
+	
+	public NFTAssetModelInt getNFTAssetModel() {
+		NFTAssetModelInt NFTAssetModel = (NFTAssetModelInt) modelCache.get("NFTAssetModel");
+		if(NFTAssetModel == null) {
+			if("Hibernate".equals(DATABASE)) {
+				NFTAssetModel = new NFTAssetModelHibImp();
+			}
+			if("JDBC".equals(DATABASE)){
+				NFTAssetModel = new NFTAssetModelHibImp();
+			}
+			
+			modelCache.put("NFTAssetModel", NFTAssetModel);
+		}
+		return NFTAssetModel;
+	}
+	
+	
 }

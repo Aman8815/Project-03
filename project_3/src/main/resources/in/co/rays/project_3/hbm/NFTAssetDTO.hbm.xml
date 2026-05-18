@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 18-May-2026, 10:25:35 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="in.co.rays.project_3.dto">
+    <class name="in.co.rays.project_3.dto.NFTAssetDTO" table="ST_NFTASSET">
+    <id name="id" type="java.lang.Long">
+    <column name="ID"></column>
+    <generator class="increment"></generator>
+    </id>
+        <property name="nftCode" type="java.lang.String">
+            <column name="NFTCODE" />
+        </property>
+        <property name="ownerName" type="java.lang.String">
+            <column name="OWNERNAME" />
+        </property>
+        <property name="assetName" type="java.lang.String">
+            <column name="ASSETNAME" />
+        </property>
+        <property name="status" type="java.lang.String">
+            <column name="STATUS" />
+        </property>
+    </class>
+</hibernate-mapping>

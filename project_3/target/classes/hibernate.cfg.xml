@@ -70,6 +70,14 @@
 			   <mapping resource="in/co/rays/project_3/hbm/ReturnDTO.hbm.xml"/>
 			   
 			   <mapping resource="in/co/rays/project_3/hbm/DecorationDTO.hbm.xml"/>
+			   
+			    <mapping resource="in/co/rays/project_3/hbm/NotificationDTO.hbm.xml"/>
+			    
+			    <mapping resource="in/co/rays/project_3/hbm/SmartParkingDTO.hbm.xml"/>
+			    
+			    <mapping resource="in/co/rays/project_3/hbm/PodcastDTO.hbm.xml"/>
+			    
+			    <mapping resource="in/co/rays/project_3/hbm/NFTAssetDTO.hbm.xml"/>
 
 	</session-factory>
 </hibernate-configuration>

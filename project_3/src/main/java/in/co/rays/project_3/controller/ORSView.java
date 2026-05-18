@@ -79,6 +79,18 @@ public interface ORSView {
 	
 	public String DECORATION_VIEW = PAGE_FOLDER+"/DecorationView.jsp";
 	public String DECORATION_LIST_VIEW = PAGE_FOLDER+"/DecorationListView.jsp";
+	
+	public String NOTIFICATION_VIEW = PAGE_FOLDER+"/NotificationView.jsp";
+	public String NOTIFICATION_LIST_VIEW = PAGE_FOLDER+"/NotificationListView.jsp";
+	
+	public String SMARTPARKING_VIEW = PAGE_FOLDER+"/SmartParkingView.jsp";
+	public String SMARTPARKING_LIST_VIEW = PAGE_FOLDER+"/SmartParkingListView.jsp";
+	
+	public String PODCAST_VIEW = PAGE_FOLDER+"/PodcastView.jsp";
+	public String PODCAST_LIST_VIEW = PAGE_FOLDER+"/PodcastListView.jsp";
+	
+	public String NFTASSET_VIEW = PAGE_FOLDER+"/NFTAssetView.jsp";
+	public String NFTASSET_LIST_VIEW = PAGE_FOLDER+"/NFTAssetListView.jsp";
 
 	public String ERROR_CTL = APP_CONTEXT + "/ErrorCtl";
 
@@ -147,4 +159,16 @@ public interface ORSView {
 	
 	public String DECORATION_CTL = APP_CONTEXT+"/ctl/DecorationCtl";
 	public String DECORATION_LIST_CTL = APP_CONTEXT+"/ctl/DecorationListCtl";
+	
+	public String NOTIFICATION_CTL = APP_CONTEXT+"/ctl/NotificationCtl";
+	public String NOTIFICATION_LIST_CTL = APP_CONTEXT+"/ctl/NotificationListCtl";
+	
+	public String SMARTPARKING_CTL= APP_CONTEXT+"/ctl/SmartParkingCtl";
+	public String SMARTPARKING_LIST_CTL = APP_CONTEXT+"/ctl/SmartParkingListCtl";
+	
+	public String PODCAST_CTL = APP_CONTEXT+"/ctl/PodcastCtl";
+	public String PODCAST_LIST_CTL = APP_CONTEXT+"/ctl/PodcastListCtl";
+	
+	public String NFTASSET_CTL = APP_CONTEXT+"/ctl/NFTAssetCtl";
+	public String NFTASSET_LIST_CTL = APP_CONTEXT+"/ctl/NFTAssetListCtl";
 }
