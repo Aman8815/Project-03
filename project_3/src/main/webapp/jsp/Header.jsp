@@ -318,6 +318,20 @@
 							href="<%=ORSView.NFTASSET_LIST_CTL%>"><i class="fa fa-user-friends"></i>NFT Asset
 							List</a>
 					</div></li>
+					
+					 <li class="nav-item dropdown" style="padding-left: 5px"><a
+					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+					role="button" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false"> <font style="color: white;">Voice Assistant
+					</font></a>
+
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+						<a class="dropdown-item" href="<%=ORSView.VOICEASSISTANT_CTL%>"><i
+							class="fa fa-user-circle"></i>Add Voice Assistant</a> <a class="dropdown-item"
+							href="<%=ORSView.VOICEASSISTANT_LIST_CTL%>"><i class="fa fa-user-friends"></i>Voice Assistant
+							List</a>
+					</div></li>
 
 				<%
 					}

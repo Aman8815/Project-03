@@ -20,4 +20,4 @@ $(document).ready(function(){
             $('#select_all').prop('checked',false);
         }
     });
-});
+});	

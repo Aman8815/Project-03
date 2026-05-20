@@ -91,6 +91,12 @@ public interface ORSView {
 	
 	public String NFTASSET_VIEW = PAGE_FOLDER+"/NFTAssetView.jsp";
 	public String NFTASSET_LIST_VIEW = PAGE_FOLDER+"/NFTAssetListView.jsp";
+	
+	public String ECOMMERCE_VIEW = PAGE_FOLDER+"/ECommerceView.jsp";
+	public String ECOMMERCE_LIST_VIEW = PAGE_FOLDER+"/ECommerceListView.jsp";
+	
+	public String VOICEASSISTANT_VIEW = PAGE_FOLDER+"/VoiceAssistantView.jsp";
+	public String VOICEASSISTANT_LIST_VIEW = PAGE_FOLDER+"/VoiceAssistantListView.jsp";
 
 	public String ERROR_CTL = APP_CONTEXT + "/ErrorCtl";
 
@@ -171,4 +177,10 @@ public interface ORSView {
 	
 	public String NFTASSET_CTL = APP_CONTEXT+"/ctl/NFTAssetCtl";
 	public String NFTASSET_LIST_CTL = APP_CONTEXT+"/ctl/NFTAssetListCtl";
+	
+	public String ECOMMERCE_CTL = APP_CONTEXT+"/ctl/ECommerceCtl";
+	public String ECOMMERCE_LIST_CTL = APP_CONTEXT+"/ctl/ECommerceListCtl";
+	
+	public String VOICEASSISTANT_CTL = APP_CONTEXT+"/ctl/VoiceAssistantCtl";
+	public String VOICEASSISTANT_LIST_CTL = APP_CONTEXT+"/ctl/VoiceAssistantListCtl";
 }

@@ -423,5 +423,35 @@ public final class ModelFactory {
 		return NFTAssetModel;
 	}
 	
+	public ECommerceModelInt getECommerceModel() {
+		ECommerceModelInt ECommerceModel = (ECommerceModelInt) modelCache.get("ECommerceModel");
+		if(ECommerceModel == null) {
+			if("Hibernate".equals(DATABASE)) {
+				ECommerceModel = new ECommerceModelHibImp();
+			}
+			if("JDBC".equals(DATABASE)){
+				ECommerceModel = new ECommerceModelHibImp();
+			}
+			
+			modelCache.put("ECommerceModel", ECommerceModel);
+		}
+		return ECommerceModel;
+	}
+	
+	public VoiceAssistantModelInt getVoiceAssistantModel() {
+		VoiceAssistantModelInt VoiceAssistantModel = (VoiceAssistantModelInt) modelCache.get("VoiceAssistantModel");
+		if(VoiceAssistantModel == null) {
+			if("Hibernate".equals(DATABASE)) {
+				VoiceAssistantModel = new VoiceAssistantModelHibImp();
+			}
+			if("JDBC".equals(DATABASE)){
+				VoiceAssistantModel = new VoiceAssistantModelHibImp();
+			}
+			
+			modelCache.put("VoiceAssistantModel", VoiceAssistantModel);
+		}
+		return VoiceAssistantModel;
+	}
+	
 	
 }

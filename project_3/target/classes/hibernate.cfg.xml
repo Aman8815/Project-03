@@ -78,6 +78,10 @@
 			    <mapping resource="in/co/rays/project_3/hbm/PodcastDTO.hbm.xml"/>
 			    
 			    <mapping resource="in/co/rays/project_3/hbm/NFTAssetDTO.hbm.xml"/>
+			    
+			    <mapping resource="in/co/rays/project_3/hbm/ECommerceDTO.hbm.xml"/>
+			    
+			    <mapping resource="in/co/rays/project_3/hbm/VoiceAssistantDTO.hbm.xml"/>
 
 	</session-factory>
 </hibernate-configuration>

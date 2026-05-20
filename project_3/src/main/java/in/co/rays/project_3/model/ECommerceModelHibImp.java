@@ -8,21 +8,21 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 
-import in.co.rays.project_3.dto.NFTAssetDTO;
+import in.co.rays.project_3.dto.ECommerceDTO;
 import in.co.rays.project_3.exception.ApplicationException;
 import in.co.rays.project_3.exception.DuplicateRecordException;
 import in.co.rays.project_3.util.HibDataSource;
 
-public class NFTAssetModelHibImp implements NFTAssetModelInt  {
+public class ECommerceModelHibImp implements ECommerceModelInt  {
 
-	public long add(NFTAssetDTO dto) throws ApplicationException, DuplicateRecordException {
+	public long add(ECommerceDTO dto) throws ApplicationException, DuplicateRecordException {
 		// TODO Auto-generated method stub
 		Session session = null;
 		Transaction tx = null;
 		long pk = 0;
-		NFTAssetDTO existDto = findByName(dto.getNftCode());
+		ECommerceDTO existDto = findByName(dto.getProductName());
 		if (existDto != null) {
-			throw new DuplicateRecordException("NftCode already exist");
+			throw new DuplicateRecordException("Product Name already exist");
 		}
 		try {
 			session = HibDataSource.getSession();
@@ -45,7 +45,7 @@ public class NFTAssetModelHibImp implements NFTAssetModelInt  {
 		return pk;
 	}
 
-	public void delete(NFTAssetDTO dto) throws ApplicationException {
+	public void delete(ECommerceDTO dto) throws ApplicationException {
 		// TODO Auto-generated method stub
 		Session session = null;
 		Transaction tx = null;
@@ -67,13 +67,13 @@ public class NFTAssetModelHibImp implements NFTAssetModelInt  {
 		}
 	}
 
-	public void update(NFTAssetDTO dto) throws ApplicationException, DuplicateRecordException {
+	public void update(ECommerceDTO dto) throws ApplicationException, DuplicateRecordException {
 		// TODO Auto-generated method stub
 		Session session = null;
 		Transaction tx = null;
-		NFTAssetDTO existDto = findByName(dto.getNftCode());
-		if (existDto != null && existDto.getId() != dto.getId()) {
-			throw new DuplicateRecordException("NftCode already exist");
+		ECommerceDTO existDto = findByName(dto.getProductName());
+		if (existDto != null) {
+			throw new DuplicateRecordException("Product Name already exist");
 		}else {
 		try {
 			session = HibDataSource.getSession();
@@ -93,18 +93,17 @@ public class NFTAssetModelHibImp implements NFTAssetModelInt  {
 			session.close();
 		}
 		}
-
 	}
 
-	public NFTAssetDTO findByPK(long pk) throws ApplicationException {
+	public ECommerceDTO findByPK(long pk) throws ApplicationException {
 		// TODO Auto-generated method stub
 		System.out.println("======"+pk);
 		Session session = null;
-		NFTAssetDTO dto = null;
+		ECommerceDTO dto = null;
 		try {
 			session = HibDataSource.getSession();
 
-			dto = (NFTAssetDTO) session.get(NFTAssetDTO.class, pk);
+			dto = (ECommerceDTO) session.get(ECommerceDTO.class, pk);
 		} catch (HibernateException e) {
 
 			throw new ApplicationException("Exception : Exception in getting course by pk");
@@ -115,17 +114,17 @@ public class NFTAssetModelHibImp implements NFTAssetModelInt  {
 		return dto;
 	}
 
-	public NFTAssetDTO findByName(String name) throws ApplicationException {
+	public ECommerceDTO findByName(String name) throws ApplicationException {
 		// TODO Auto-generated method stub
 		Session session = null;
-		NFTAssetDTO dto = null;
+		ECommerceDTO dto = null;
 		try {
 			session = HibDataSource.getSession();
-			Criteria criteria = session.createCriteria(NFTAssetDTO.class);
-			criteria.add(Restrictions.eq("nftCode", name));
+			Criteria criteria = session.createCriteria(ECommerceDTO.class);
+			criteria.add(Restrictions.eq("productName", name));
 			List list = criteria.list();
 			if (list.size() > 0) {
-				dto = (NFTAssetDTO) list.get(0);
+				dto = (ECommerceDTO) list.get(0);
 			}
 		} catch (HibernateException e) {
 
@@ -148,7 +147,7 @@ public class NFTAssetModelHibImp implements NFTAssetModelInt  {
 		List list = null;
 		try {
 			session = HibDataSource.getSession();
-			Criteria criteria = session.createCriteria(NFTAssetDTO.class);
+			Criteria criteria = session.createCriteria(ECommerceDTO.class);
 			if (pageSize > 0) {
 				pageNo = ((pageNo - 1) * pageSize) + 1;
 				criteria.setFirstResult(pageNo);
@@ -164,31 +163,31 @@ public class NFTAssetModelHibImp implements NFTAssetModelInt  {
 		return list;
 	}
 
-	public List search(NFTAssetDTO dto) throws ApplicationException {
+	public List search(ECommerceDTO dto) throws ApplicationException {
 		// TODO Auto-generated method stub
 		return search(dto, 0, 0);
 	}
 
-	public List search(NFTAssetDTO dto, int pageNo, int pageSize) throws ApplicationException {
+	public List search(ECommerceDTO dto, int pageNo, int pageSize) throws ApplicationException {
 		// TODO Auto-generated method stub
 		  Session session = null;
 	        List list = null;
 	        try {
 	            session = HibDataSource.getSession();
-	            Criteria criteria = session.createCriteria(NFTAssetDTO.class);
+	            Criteria criteria = session.createCriteria(ECommerceDTO.class);
 
 	            if (dto.getId() > 0) {
 	                criteria.add(Restrictions.eq("id", dto.getId()));
 	            }
-	            if (dto.getNftCode() != null && dto.getNftCode().length() > 0) {
-	                criteria.add(Restrictions.like("nftCode", dto.getNftCode() + "%"));
+	            if (dto.getProductName() != null && dto.getProductName().length() > 0) {
+	                criteria.add(Restrictions.like("productName", dto.getProductName() + "%"));
 	            }
-	            if (dto.getAssetName() != null && dto.getAssetName().length() > 0) {
-	                criteria.add(Restrictions.like("assetName", dto.getAssetName()+"%"
+	            if (dto.getPrice() !=0 && dto.getPrice() > 0) {
+	                criteria.add(Restrictions.eq("price", dto.getPrice()
 	                    ));
 	            }
-	            if (dto.getStatus() != null && dto.getStatus().length() > 0) {
-	                criteria.add(Restrictions.like("status", dto.getStatus()));
+	            if (dto.getPaymentStatus() != null && dto.getPaymentStatus().length()> 0) {
+	                criteria.add(Restrictions.like("paymentStatus", dto.getPaymentStatus()+"%"));
 	            }
 	            
 

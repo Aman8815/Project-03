@@ -1,4 +1,4 @@
-<%@page import="in.co.rays.project_3.controller.NFTAssetCtl"%>
+<%@page import="in.co.rays.project_3.controller.VoiceAssistantCtl"%>
 <%@page import="in.co.rays.project_3.controller.LoanCtl"%>
 <%@page import="in.co.rays.project_3.controller.ComplaintCtl"%>
 <%@page import="in.co.rays.project_3.controller.MeetingRoomCtl"%>
@@ -15,7 +15,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>NFTAsset view</title>
+<title>Voice Assistant view</title>
 <style type="text/css">
 i.css {
 	border: 2px solid #8080803b;
@@ -41,11 +41,11 @@ i.css {
 		<%@include file="calendar.jsp"%>
 	</div>
 	<div>
-		<jsp:useBean id="dto" class="in.co.rays.project_3.dto.NFTAssetDTO"
+		<jsp:useBean id="dto" class="in.co.rays.project_3.dto.VoiceAssistantDTO"
 			scope="request"></jsp:useBean>
 
 		<main>
-		<form action="<%=ORSView.NFTASSET_CTL%>" method="post">
+		<form action="<%=ORSView.VOICEASSISTANT_CTL%>" method="post">
 
 			<div class="row pt-3 pb-3">
 				<!-- Grid column -->
@@ -59,11 +59,11 @@ i.css {
 								if ( id > 0) {
 							%>
 							<h3 class="text-center default-text text-primary">Update
-								NFT Asset</h3>
+								Voice Assistant</h3>
 							<%
 								} else {
 							%>
-							<h3 class="text-center default-text text-primary">Add NFT Asset
+							<h3 class="text-center default-text text-primary">Add Voice Assistant
 								</h3>
 							<%
 								}
@@ -109,7 +109,7 @@ i.css {
 									value="<%=DataUtility.getTimestamp(dto.getModifiedDatetime())%>">  
 							</div>
 							<div class="md-form">
-								<span class="pl-sm-5"><b>NFTCode</b><span
+								<span class="pl-sm-5"><b>User Voice</b><span
 									style="color: red;">*</span></span> </br>
 								<div class="col-sm-12">
 									<div class="input-group">
@@ -118,16 +118,16 @@ i.css {
 												<i class="fa fa-book grey-text" style="font-size: 1rem;"></i>
 											</div>
 										</div>
-										<input type="text" class="form-control" name="nftCode"
-											placeholder="Enter nftCode "
-											value="<%=DataUtility.getStringData(dto.getNftCode())%>">
+										<input type="text" class="form-control" name="userVoice"
+											placeholder="Enter userVoice "
+											value="<%=DataUtility.getStringData(dto.getUserVoice())%>">
 									</div>
 								</div>
-								<font color="red" class="pl-sm-5"> <%=ServletUtility.getErrorMessage("nftCode", request)%></font></br>
+								<font color="red" class="pl-sm-5"> <%=ServletUtility.getErrorMessage("userVoice", request)%></font></br>
 
 
 								<div class="md-form">
-									<span class="pl-sm-5"><b>Asset Name</b><span
+									<span class="pl-sm-5"><b>Responce</b><span
 										style="color: red;">*</span></span> </br>
 									<div class="col-sm-12">
 										<div class="input-group">
@@ -136,15 +136,15 @@ i.css {
 													<i class="fa fa-book grey-text" style="font-size: 1rem;"></i>
 												</div>
 											</div>
-											<input type="text" class="form-control" name="assetName"
-												placeholder="Enter assetName"
-												value="<%=DataUtility.getStringData(dto.getAssetName())%>">
+											<input type="text" class="form-control" name="response"
+												placeholder="Enter response"
+												value="<%=DataUtility.getStringData(dto.getResponse())%>">
 										</div>
 									</div>
-									<font color="red" class="pl-sm-5"> <%=ServletUtility.getErrorMessage("assetName", request)%></font></br>
+									<font color="red" class="pl-sm-5"> <%=ServletUtility.getErrorMessage("response", request)%></font></br>
 
 
-									<span class="pl-sm-5"><b>Owner Name</b><span
+									<span class="pl-sm-5"><b>Language</b><span
 										style="color: red;">*</span></span></br>
 									<div class="col-sm-12">
 										<div class="input-group">
@@ -154,31 +154,31 @@ i.css {
 												</div>
 											</div>
 
-										<input type="text" class="form-control" name="ownerName"
-												placeholder="Enter ownerName"
-												value="<%=DataUtility.getStringData(dto.getOwnerName())%>">
+										<input type="text" class="form-control" name="language"
+												placeholder="Enter language"
+												value="<%=DataUtility.getStringData(dto.getLanguage())%>">
 
 									</div>
-									<font color="red" class="pl-sm-5"> <%=ServletUtility.getErrorMessage("ownerName", request)%></font></br>
+									<font color="red" class="pl-sm-5"> <%=ServletUtility.getErrorMessage("language", request)%></font></br>
 
 
 
 									<div class="md-form">
-										<span class="pl-sm-5"><b>Status</b><span
+										<span class="pl-sm-5"><b>Accuracy</b><span
 											style="color: red;">*</span></span> </br>
 										<div class="col-sm-12">
 											<div class="input-group">
 												<div class="input-group-prepend">
 													<div class="input-group-text">
-														<i class="fa fa-toggle-on grey-text" style="font-size: 1rem;"></i>
+														<i class="fa fa-book grey-text" style="font-size: 1rem;"></i>
 													</div>
 												</div>
-												<input type="text" class="form-control" name="status"
-													placeholder="Enter status"
-													value="<%=DataUtility.getStringData(dto.getStatus())%>">
+												<input type="text"   class="form-control" name="accuracy"
+													placeholder="Enter accuracy"
+													value="<%=DataUtility.getStringData(dto.getAccuracy())%>">
 											</div>
 										</div>
-										<font color="red" class="pl-sm-5"> <%=ServletUtility.getErrorMessage("status", request)%></font></br>
+										<font color="red" class="pl-sm-5"> <%=ServletUtility.getErrorMessage("accuracy", request)%></font></br>
 										<%
 											if (id > 0) {
 										%>
@@ -186,10 +186,10 @@ i.css {
 
 											<input type="submit" name="operation"
 												class="btn btn-success btn-md" style="font-size: 17px"
-												value="<%=NFTAssetCtl.OP_UPDATE%>"> <input
+												value="<%=VoiceAssistantCtl.OP_UPDATE%>"> <input
 												type="submit" name="operation"
 												class="btn btn-warning btn-md" style="font-size: 17px"
-												value="<%=NFTAssetCtl.OP_CANCEL%>">
+												value="<%=VoiceAssistantCtl.OP_CANCEL%>">
 										</div>
 										<%
 											} else {
@@ -198,10 +198,10 @@ i.css {
 
 											<input type="submit" name="operation"
 												class="btn btn-success btn-md" style="font-size: 17px"
-												value="<%=NFTAssetCtl.OP_SAVE%>"> <input
+												value="<%=VoiceAssistantCtl.OP_SAVE%>"> <input
 												type="submit" name="operation"
 												class="btn btn-warning btn-md" style="font-size: 17px"
-												value="<%=NFTAssetCtl.OP_RESET%>">
+												value="<%=VoiceAssistantCtl.OP_RESET%>">
 										</div>
 										<%
 											}
