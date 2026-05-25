@@ -453,5 +453,20 @@ public final class ModelFactory {
 		return VoiceAssistantModel;
 	}
 	
+	public ChatApplicationModelInt getChatApplicationModel() {
+		ChatApplicationModelInt ChatApplicationModel = (ChatApplicationModelInt) modelCache.get("ChatApplicationModel");
+		if(ChatApplicationModel == null) {
+			if("Hibernate".equals(DATABASE)) {
+				ChatApplicationModel = new ChatApplicationModelHibImp();
+			}
+			if("JDBC".equals(DATABASE)){
+				ChatApplicationModel = new ChatApplicationModelHibImp();
+			}
+			
+			modelCache.put("ChatApplicationModel", ChatApplicationModel);
+		}
+		return ChatApplicationModel;
+	}
+	
 	
 }

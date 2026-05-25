@@ -97,6 +97,9 @@ public interface ORSView {
 	
 	public String VOICEASSISTANT_VIEW = PAGE_FOLDER+"/VoiceAssistantView.jsp";
 	public String VOICEASSISTANT_LIST_VIEW = PAGE_FOLDER+"/VoiceAssistantListView.jsp";
+	
+	public String CHATAPPLICATION_VIEW = PAGE_FOLDER+"/ChatApplicationView.jsp";
+	public String CHATAPPLICATION_LIST_VIEW = PAGE_FOLDER+"/ChatApplicationListView.jsp";
 
 	public String ERROR_CTL = APP_CONTEXT + "/ErrorCtl";
 
@@ -183,4 +186,7 @@ public interface ORSView {
 	
 	public String VOICEASSISTANT_CTL = APP_CONTEXT+"/ctl/VoiceAssistantCtl";
 	public String VOICEASSISTANT_LIST_CTL = APP_CONTEXT+"/ctl/VoiceAssistantListCtl";
+	
+	public String CHATAPPLICATION_CTL = APP_CONTEXT+"/ctl/ChatApplicationCtl";
+	public String CHATAPPLICATION_LIST_CTL = APP_CONTEXT+"/ctl/ChatApplicationListCtl";
 }
