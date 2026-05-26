@@ -100,6 +100,9 @@ public interface ORSView {
 	
 	public String CHATAPPLICATION_VIEW = PAGE_FOLDER+"/ChatApplicationView.jsp";
 	public String CHATAPPLICATION_LIST_VIEW = PAGE_FOLDER+"/ChatApplicationListView.jsp";
+	
+	public String BANKINGAPP_VIEW = PAGE_FOLDER+"/BankingAppView.jsp";
+	public String BANKINGAPP_LIST_VIEW = PAGE_FOLDER+"/BankingAppListView.jsp";
 
 	public String ERROR_CTL = APP_CONTEXT + "/ErrorCtl";
 
@@ -189,4 +192,7 @@ public interface ORSView {
 	
 	public String CHATAPPLICATION_CTL = APP_CONTEXT+"/ctl/ChatApplicationCtl";
 	public String CHATAPPLICATION_LIST_CTL = APP_CONTEXT+"/ctl/ChatApplicationListCtl";
+	
+	public String BANKINGAPP_CTL = APP_CONTEXT+"/ctl/BankingAppCtl";
+	public String BANKINGAPP_LIST_CTL = APP_CONTEXT+"/ctl/BankingAppListCtl";
 }

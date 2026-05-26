@@ -346,6 +346,20 @@
 							href="<%=ORSView.CHATAPPLICATION_LIST_CTL%>"><i class="fa fa-user-friends"></i>Chat Application
 							List</a>
 					</div></li>
+					
+					 <li class="nav-item dropdown" style="padding-left: 5px"><a
+					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+					role="button" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false"> <font style="color: white;">Banking App
+					</font></a>
+
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+						<a class="dropdown-item" href="<%=ORSView.BANKINGAPP_CTL%>"><i
+							class="fa fa-user-circle"></i>Add Banking App</a> <a class="dropdown-item"
+							href="<%=ORSView.BANKINGAPP_LIST_CTL%>"><i class="fa fa-user-friends"></i>Banking App
+							List</a>
+					</div></li>
 
 				<%
 					}

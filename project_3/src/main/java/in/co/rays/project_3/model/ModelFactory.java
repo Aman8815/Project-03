@@ -469,4 +469,19 @@ public final class ModelFactory {
 	}
 	
 	
+	public BankingAppModelInt getBankingAppModel() {
+		BankingAppModelInt BankingAppModel = (BankingAppModelInt) modelCache.get("BankingAppModel");
+		if(BankingAppModel == null) {
+			if("Hibernate".equals(DATABASE)) {
+				BankingAppModel = new BankingAppModelHibImp();
+			}
+			if("JDBC".equals(DATABASE)){
+				BankingAppModel = new BankingAppModelHibImp();
+			}
+			
+			modelCache.put("BankingAppModel", BankingAppModel);
+		}
+		return BankingAppModel;
+	}
+	
 }

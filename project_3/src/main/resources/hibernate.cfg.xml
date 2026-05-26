@@ -84,6 +84,8 @@
 			    <mapping resource="in/co/rays/project_3/hbm/VoiceAssistantDTO.hbm.xml"/>
 			    
 			     <mapping resource="in/co/rays/project_3/hbm/ChatApplicationDTO.hbm.xml"/>
+			     
+			     <mapping resource="in/co/rays/project_3/hbm/BankingAppDTO.hbm.xml"/>
 
 	</session-factory>
 </hibernate-configuration>
