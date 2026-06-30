@@ -484,4 +484,34 @@ public final class ModelFactory {
 		return BankingAppModel;
 	}
 	
+	public PetrolPumpModelInt getPetrolPumpModel() {
+		PetrolPumpModelInt PetrolPumpModel = (PetrolPumpModelInt) modelCache.get("PetrolPumpModel");
+		if(PetrolPumpModel == null) {
+			if("Hibernate".equals(DATABASE)) {
+				PetrolPumpModel = new PetrolPumpModelHibImp();
+			}
+			if("JDBC".equals(DATABASE)){
+				PetrolPumpModel = new PetrolPumpModelHibImp();
+			}
+			
+			modelCache.put("PetrolPumpModel", PetrolPumpModel);
+		}
+		return PetrolPumpModel;
+	}
+	
+	public InsuranceAppModelInt getInsuranceAppModel() {
+		InsuranceAppModelInt InsuranceAppModel = (InsuranceAppModelInt) modelCache.get("InsuranceAppModel");
+		if(InsuranceAppModel == null) {
+			if("Hibernate".equals(DATABASE)) {
+				InsuranceAppModel = new InsuranceAppModelHibImp();
+			}
+			if("JDBC".equals(DATABASE)){
+				InsuranceAppModel = new InsuranceAppModelHibImp();
+			}
+			
+			modelCache.put("InsuranceAppModel", InsuranceAppModel);
+		}
+		return InsuranceAppModel;
+	}
+	
 }

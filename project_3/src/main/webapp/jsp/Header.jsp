@@ -158,17 +158,7 @@
 							href="<%=ORSView.COURSE_LIST_CTL%>"><i
 							class="fa fa-sort-amount-down"></i>Course List </a>
 					</div></li>
-				<li class="nav-item dropdown" style="padding-left: 5px"><a
-					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
-					role="button" data-toggle="dropdown" aria-haspopup="true"
-					aria-expanded="false"> <font style="color: white;">Student</font>
-				</a>
-					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="<%=ORSView.STUDENT_CTL%>"><i
-							class="fa fa-user-circle"></i>Add Student</a> <a
-							class="dropdown-item" href="<%=ORSView.STUDENT_LIST_CTL%>"><i
-							class="fa fa-users"></i>Student List</a>
-					</div></li>
+			
 				<li class="nav-item dropdown" style="padding-left: 5px"><a
 					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 					role="button" data-toggle="dropdown" aria-haspopup="true"
@@ -360,6 +350,46 @@
 							href="<%=ORSView.BANKINGAPP_LIST_CTL%>"><i class="fa fa-user-friends"></i>Banking App
 							List</a>
 					</div></li>
+					
+					 <li class="nav-item dropdown" style="padding-left: 5px"><a
+					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+					role="button" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false"> <font style="color: white;">Petrol Pump
+					</font></a>
+
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+						<a class="dropdown-item" href="<%=ORSView.PETROLPUMP_CTL%>"><i
+							class="fa fa-user-circle"></i>Add Petrol Pump</a> <a class="dropdown-item"
+							href="<%=ORSView.PETROLPUMP_LIST_CTL%>"><i class="fa fa-user-friends"></i>Petrol Pump
+							List</a>
+					</div></li>
+					
+					 <li class="nav-item dropdown" style="padding-left: 5px"><a
+					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+					role="button" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false"> <font style="color: white;">Insurance App
+					</font></a>
+
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+						<a class="dropdown-item" href="<%=ORSView.INSURANCEAPP_CTL%>"><i
+							class="fa fa-user-circle"></i>Add Insurance</a> <a class="dropdown-item"
+							href="<%=ORSView.INSURANCEAPP_LIST_CTL%>"><i class="fa fa-user-friends"></i>Insurace
+							List</a>
+					</div></li>
+					
+				<%-- 	<li class="nav-item dropdown" style="padding-left: 5px"><a
+					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+					role="button" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false"> <font style="color: white;">Student</font>
+				</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="<%=ORSView.STUDENT_CTL%>"><i
+							class="fa fa-user-circle"></i>Add Student</a> <a
+							class="dropdown-item" href="<%=ORSView.STUDENT_LIST_CTL%>"><i
+							class="fa fa-users"></i>Student List</a>
+					</div></li> --%>
 
 				<%
 					}

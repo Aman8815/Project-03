@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 28-May-2026, 10:50:25 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="in.co.rays.project_3.dto">
+    <class name="in.co.rays.project_3.dto.InsuranceAppDTO" table="ST_INSURANCE">
+    <id name="id" type="java.lang.Long"> 
+    <column name="ID"></column>
+    <generator class="increment"></generator>
+    </id>
+        <property name="customerName" type="java.lang.String" access="field">
+            <column name="CUSTOMERNAME" />
+        </property>
+        <property name="premiumAmount" type="java.lang.Integer" access="field">
+            <column name="PREMIUMAMOUNT" />
+        </property>
+        <property name="policyType" type="java.lang.String" access="field">
+            <column name="POLICYTYPE" />
+        </property>
+        <property name="claimStatus" type="java.lang.String" access="field">
+            <column name="CLAIMSTATUS" />
+        </property>
+    </class>
+</hibernate-mapping>

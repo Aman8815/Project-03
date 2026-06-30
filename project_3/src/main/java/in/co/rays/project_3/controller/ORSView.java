@@ -103,6 +103,12 @@ public interface ORSView {
 	
 	public String BANKINGAPP_VIEW = PAGE_FOLDER+"/BankingAppView.jsp";
 	public String BANKINGAPP_LIST_VIEW = PAGE_FOLDER+"/BankingAppListView.jsp";
+	
+	public String PETROLPUMP_VIEW = PAGE_FOLDER+"/PetrolpPumpView.jsp";
+	public String PETROLPUMP_LIST_VIEW = PAGE_FOLDER+"/PetrolPumpListView.jsp";
+	
+	public String INSURANCEAPP_VIEW = PAGE_FOLDER+"/InsuranceAppView.jsp";
+	public String INSURANCEAPP_LIST_VIEW = PAGE_FOLDER+"/InsuranceAppListView.jsp";
 
 	public String ERROR_CTL = APP_CONTEXT + "/ErrorCtl";
 
@@ -195,4 +201,10 @@ public interface ORSView {
 	
 	public String BANKINGAPP_CTL = APP_CONTEXT+"/ctl/BankingAppCtl";
 	public String BANKINGAPP_LIST_CTL = APP_CONTEXT+"/ctl/BankingAppListCtl";
+	
+	public String PETROLPUMP_CTL = APP_CONTEXT+"/ctl/PetrolPumpCtl";
+	public String PETROLPUMP_LIST_CTL = APP_CONTEXT+"/ctl/PetrolPumpListCtl";
+	
+	public String INSURANCEAPP_CTL = APP_CONTEXT+"/ctl/InsuranceAppCtl";
+	public String INSURANCEAPP_LIST_CTL = APP_CONTEXT+"/ctl/InsuranceAppListCtl";
 }
