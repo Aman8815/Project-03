@@ -90,8 +90,9 @@
 			     
 			      <mapping resource="in/co/rays/project_3/hbm/InsuranceAppDTO.hbm.xml"/>
 			      
-			      <mapping
-			resource="in/co/rays/project_3/hbm/StudentDTO.hbm.xml" />
+			       <mapping resource="in/co/rays/project_3/hbm/WaterDTO.hbm.xml"/>
+			      
+			  
 
 	</session-factory>
 </hibernate-configuration>

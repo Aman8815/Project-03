@@ -109,6 +109,9 @@ public interface ORSView {
 	
 	public String INSURANCEAPP_VIEW = PAGE_FOLDER+"/InsuranceAppView.jsp";
 	public String INSURANCEAPP_LIST_VIEW = PAGE_FOLDER+"/InsuranceAppListView.jsp";
+	
+	public String WATER_VIEW = PAGE_FOLDER+"/WaterView.jsp";
+	public String WATER_LIST_VIEW = PAGE_FOLDER+"/WaterListView.jsp";
 
 	public String ERROR_CTL = APP_CONTEXT + "/ErrorCtl";
 
@@ -207,4 +210,7 @@ public interface ORSView {
 	
 	public String INSURANCEAPP_CTL = APP_CONTEXT+"/ctl/InsuranceAppCtl";
 	public String INSURANCEAPP_LIST_CTL = APP_CONTEXT+"/ctl/InsuranceAppListCtl";
+	
+	public String WATER_CTL = APP_CONTEXT+"/ctl/WaterCtl";
+	public String WATER_LIST_CTL = APP_CONTEXT+"/ctl/WaterListCtl";
 }

@@ -514,4 +514,19 @@ public final class ModelFactory {
 		return InsuranceAppModel;
 	}
 	
+	
+	public WaterModelInt getWaterModel() {
+		WaterModelInt WaterModel = (WaterModelInt) modelCache.get("WaterModel");
+		if(WaterModel == null) {
+			if("Hibernate".equals(DATABASE)) {
+				WaterModel = new WaterModelHibImp();
+			}
+			if("JDBC".equals(DATABASE)){
+				WaterModel = new WaterModelHibImp();
+			}
+			
+			modelCache.put("WaterModel", WaterModel);
+		}
+		return WaterModel;
+	}
 }

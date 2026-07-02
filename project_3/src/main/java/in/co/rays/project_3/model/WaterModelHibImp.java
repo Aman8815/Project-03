@@ -9,21 +9,21 @@ import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
 
-import in.co.rays.project_3.dto.LoanDTO;
+import in.co.rays.project_3.dto.WaterDTO;
 import in.co.rays.project_3.exception.ApplicationException;
 import in.co.rays.project_3.exception.DuplicateRecordException;
 import in.co.rays.project_3.util.HibDataSource;
 
-public class LoanModelHibImp implements LoanModelInt  {
+public class WaterModelHibImp implements WaterModelInt  {
 
-	public long add(LoanDTO dto) throws ApplicationException, DuplicateRecordException {
+	public long add(WaterDTO dto) throws ApplicationException, DuplicateRecordException {
 		// TODO Auto-generated method stub
 		Session session = null;
 		Transaction tx = null;
 		long pk = 0;
-		LoanDTO existDto = findByName(dto.getLenderName());
+		WaterDTO existDto = findByName(dto.getWaterCode());
 		if (existDto != null) {
-			throw new DuplicateRecordException("complaintCode already exist");
+			throw new DuplicateRecordException("WaterCode already exist");
 		}
 		try {
 			session = HibDataSource.getSession();
@@ -46,7 +46,7 @@ public class LoanModelHibImp implements LoanModelInt  {
 		return pk;
 	}
 
-	public void delete(LoanDTO dto) throws ApplicationException {
+	public void delete(WaterDTO dto) throws ApplicationException {
 		// TODO Auto-generated method stub
 		Session session = null;
 		Transaction tx = null;
@@ -68,7 +68,7 @@ public class LoanModelHibImp implements LoanModelInt  {
 		}
 	}
 
-	public void update(LoanDTO dto) throws ApplicationException, DuplicateRecordException {
+	public void update(WaterDTO dto) throws ApplicationException, DuplicateRecordException {
 		// TODO Auto-generated method stub
 		Session session = null;
 		Transaction tx = null;
@@ -92,15 +92,15 @@ public class LoanModelHibImp implements LoanModelInt  {
 
 	}
 
-	public LoanDTO findByPK(long pk) throws ApplicationException {
+	public WaterDTO findByPK(long pk) throws ApplicationException {
 		// TODO Auto-generated method stub
 		System.out.println("======"+pk);
 		Session session = null;
-		LoanDTO dto = null;
+		WaterDTO dto = null;
 		try {
 			session = HibDataSource.getSession();
 
-			dto = (LoanDTO) session.get(LoanDTO.class, pk);
+			dto = (WaterDTO) session.get(WaterDTO.class, pk);
 		} catch (HibernateException e) {
 
 			throw new ApplicationException("Exception : Exception in getting course by pk");
@@ -111,17 +111,17 @@ public class LoanModelHibImp implements LoanModelInt  {
 		return dto;
 	}
 
-	public LoanDTO findByName(String name) throws ApplicationException {
+	public WaterDTO findByName(String name) throws ApplicationException {
 		// TODO Auto-generated method stub
 		Session session = null;
-		LoanDTO dto = null;
+		WaterDTO dto = null;
 		try {
 			session = HibDataSource.getSession();
-			Criteria criteria = session.createCriteria(LoanDTO.class);
-			criteria.add(Restrictions.eq("lenderName", name));
+			Criteria criteria = session.createCriteria(WaterDTO.class);
+			criteria.add(Restrictions.eq("waterCode", name));
 			List list = criteria.list();
 			if (list.size() > 0) {
-				dto = (LoanDTO) list.get(0);
+				dto = (WaterDTO) list.get(0);
 			}
 		} catch (HibernateException e) {
 
@@ -144,7 +144,7 @@ public class LoanModelHibImp implements LoanModelInt  {
 		List list = null;
 		try {
 			session = HibDataSource.getSession();
-			Criteria criteria = session.createCriteria(LoanDTO.class);
+			Criteria criteria = session.createCriteria(WaterDTO.class);
 			if (pageSize > 0) {
 				pageNo = ((pageNo - 1) * pageSize) + 1;
 				criteria.setFirstResult(pageNo);
@@ -160,31 +160,31 @@ public class LoanModelHibImp implements LoanModelInt  {
 		return list;
 	}
 
-	public List search(LoanDTO dto) throws ApplicationException {
+	public List search(WaterDTO dto) throws ApplicationException {
 		// TODO Auto-generated method stub
 		return search(dto, 0, 0);
 	}
 
-	public List search(LoanDTO dto, int pageNo, int pageSize) throws ApplicationException {
+	public List search(WaterDTO dto, int pageNo, int pageSize) throws ApplicationException {
 		// TODO Auto-generated method stub
 		  Session session = null;
 	        List list = null;
 	        try {
 	            session = HibDataSource.getSession();
-	            Criteria criteria = session.createCriteria(LoanDTO.class);
+	            Criteria criteria = session.createCriteria(WaterDTO.class);
 
 	            if (dto.getId() > 0) {
 	                criteria.add(Restrictions.eq("id", dto.getId()));
 	            }
-	            if (dto.getLenderName() != null && dto.getLenderName().length() > 0) {
-	                criteria.add(Restrictions.like("lenderName", dto.getLenderName() + "%"));
+	            if (dto.getWaterCode() != null && dto.getWaterCode().length() > 0) {
+	                criteria.add(Restrictions.like("waterCode", dto.getWaterCode() + "%"));
 	            }
-	            if (dto.getLoanAmount() != null && dto.getLoanAmount() > 0) {
-	                criteria.add(Restrictions.eq("loanAmount", dto.getLoanAmount()
+	            if (dto.getWaterLevel() != null && dto.getWaterLevel() > 0) {
+	                criteria.add(Restrictions.eq("waterLevel", dto.getWaterLevel()
 	                    ));
 	            }
-	            if (dto.getMaturityDate() != null && dto.getMaturityDate().getTime() > 0) {
-	                criteria.add(Restrictions.like("maturityDate", dto.getMaturityDate()));
+	            if (dto.getStatus() != null && dto.getStatus().length() > 0) {
+	                criteria.add(Restrictions.like("status", dto.getStatus()));
 	            }
 	            
 

@@ -379,17 +379,17 @@
 							List</a>
 					</div></li>
 					
-				<%-- 	<li class="nav-item dropdown" style="padding-left: 5px"><a
+					<li class="nav-item dropdown" style="padding-left: 5px"><a
 					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 					role="button" data-toggle="dropdown" aria-haspopup="true"
-					aria-expanded="false"> <font style="color: white;">Student</font>
+					aria-expanded="false"> <font style="color: white;">Water</font>
 				</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="<%=ORSView.STUDENT_CTL%>"><i
-							class="fa fa-user-circle"></i>Add Student</a> <a
-							class="dropdown-item" href="<%=ORSView.STUDENT_LIST_CTL%>"><i
-							class="fa fa-users"></i>Student List</a>
-					</div></li> --%>
+						<a class="dropdown-item" href="<%=ORSView.WATER_CTL%>"><i
+							class="fa fa-user-circle"></i>Add Water</a> <a
+							class="dropdown-item" href="<%=ORSView.WATER_LIST_CTL%>"><i
+							class="fa fa-users"></i>Water List</a>
+					</div></li>
 
 				<%
 					}
