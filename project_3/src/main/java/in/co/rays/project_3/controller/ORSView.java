@@ -112,6 +112,9 @@ public interface ORSView {
 	
 	public String WATER_VIEW = PAGE_FOLDER+"/WaterView.jsp";
 	public String WATER_LIST_VIEW = PAGE_FOLDER+"/WaterListView.jsp";
+	
+	public String SMART_VIEW = PAGE_FOLDER+"/SmartView.jsp";
+	public String SMART_LIST_VIEW = PAGE_FOLDER+"/SmartListView.jsp";
 
 	public String ERROR_CTL = APP_CONTEXT + "/ErrorCtl";
 
@@ -213,4 +216,7 @@ public interface ORSView {
 	
 	public String WATER_CTL = APP_CONTEXT+"/ctl/WaterCtl";
 	public String WATER_LIST_CTL = APP_CONTEXT+"/ctl/WaterListCtl";
+	
+	public String SMART_CTL = APP_CONTEXT+"/ctl/SmartCtl";
+	public String SMART_LIST_CTL = APP_CONTEXT+"/ctl/SmartListCtl";
 }

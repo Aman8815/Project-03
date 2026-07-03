@@ -529,4 +529,19 @@ public final class ModelFactory {
 		}
 		return WaterModel;
 	}
+	
+	public SmartModelInt getSmartModel() {
+		SmartModelInt SmartModel = (SmartModelInt) modelCache.get("SmartModel");
+		if(SmartModel == null) {
+			if("Hibernate".equals(DATABASE)) {
+				SmartModel = new SmartModelHibImp();
+			}
+			if("JDBC".equals(DATABASE)){
+				SmartModel = new SmartModelHibImp();
+			}
+			
+			modelCache.put("SmartModel", SmartModel);
+		}
+		return SmartModel;
+	}
 }

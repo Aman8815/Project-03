@@ -91,6 +91,8 @@
 			      <mapping resource="in/co/rays/project_3/hbm/InsuranceAppDTO.hbm.xml"/>
 			      
 			       <mapping resource="in/co/rays/project_3/hbm/WaterDTO.hbm.xml"/>
+			       
+			       <mapping resource="in/co/rays/project_3/hbm/SmartDTO.hbm.xml"/>
 			      
 			  
 
