@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 27-Jul-2026, 11:33:55 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="in.co.rays.project_3.dto">
+    <class name="in.co.rays.project_3.dto.ExamDTO" table="st_exam">
+    <id name="id" type="java.lang.Long">
+			<column name="ID" />
+			<generator class="increment" />
+		</id>
+        <property name="examName" type="java.lang.String">
+            <column name="EXAMNAME" />
+        </property>
+        <property name="passingMarks" type="java.lang.Integer">
+            <column name="PASSINGMARKS" />
+        </property>
+        <property name="examCenter" type="java.lang.String">
+            <column name="EXAMCENTER" />
+        </property>
+        <property name="totalMarks" type="java.lang.Integer">
+            <column name="TOTALMARKS" />
+        </property>
+    </class>
+</hibernate-mapping>

@@ -544,4 +544,19 @@ public final class ModelFactory {
 		}
 		return SmartModel;
 	}
+	
+	public ExamModelInt getExamModel() {
+		ExamModelInt ExamModel = (ExamModelInt) modelCache.get("ExamModel");
+		if(ExamModel == null) {
+			if("Hibernate".equals(DATABASE)) {
+				ExamModel = new ExamModelHibImp();
+			}
+			if("JDBC".equals(DATABASE)){
+				ExamModel = new ExamModelHibImp();
+			}
+			
+			modelCache.put("ExamModel", ExamModel);
+		}
+		return ExamModel;
+	}
 }

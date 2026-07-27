@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 11-Mar-2026, 11:13:08 AM by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="OnlineCourseDTO" table="ST_ONLINECOURSE">
+    <class name="OnlineCourseDTO" table="st_onlinecourse">
        
        <id name="id" type="java.lang.Long">
 			<column name="ID" />

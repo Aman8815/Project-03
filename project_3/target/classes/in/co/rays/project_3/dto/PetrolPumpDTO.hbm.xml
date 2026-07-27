@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 27-May-2026, 11:11:48 AM by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="in.co.rays.project_3.dto.PetrolPumpDTO" table="ST_PETROLPUMP">
+    <class name="in.co.rays.project_3.dto.PetrolPumpDTO" table="st_petrolpump">
     <id name="id" type="java.lang.Long">
     <column name="ID"></column>
     <generator class="increment"></generator>

@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 26-May-2026, 10:54:46 AM by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping package="in.co.rays.project_3.dto">
-    <class name="in.co.rays.project_3.dto.BankingAppDTO" table="ST_BANKINGAPP">
+    <class name="in.co.rays.project_3.dto.BankingAppDTO" table="st_bankingapp">
     <id name="id" type="java.lang.Long">
     <column name="ID"></column>
     <generator class="increment"></generator>

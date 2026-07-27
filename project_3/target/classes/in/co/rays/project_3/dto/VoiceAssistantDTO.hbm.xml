@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 20-May-2026, 12:03:05 PM by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="in.co.rays.project_3.dto.VoiceAssistantDTO" table="ST_VOICEASSISTANT">
+    <class name="in.co.rays.project_3.dto.VoiceAssistantDTO" table="st_voiceassistant">
     <id name="id" type="java.lang.Long">
     <column name="ID"></column>
     <generator class="increment"></generator>

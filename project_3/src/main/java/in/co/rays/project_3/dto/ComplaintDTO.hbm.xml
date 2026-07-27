@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 17-Mar-2026, 11:39:00 AM by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="in.co.rays.project_3.dto.ComplaintDTO"  table="ST_COMPLAINT">
+    <class name="in.co.rays.project_3.dto.ComplaintDTO"  table="st_complaint">
     
           <id name="id" type="java.lang.Long">
 			<column name="ID" />

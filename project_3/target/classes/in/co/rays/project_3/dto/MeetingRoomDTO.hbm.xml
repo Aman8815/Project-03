@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 16-Mar-2026, 11:26:58 AM by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="in.co.rays.project_3.dto.MeetingRoomDTO" table="ST_MEETINGROOM">
+    <class name="in.co.rays.project_3.dto.MeetingRoomDTO" table="st_meetingroom">
     
           <id name="id" type="java.lang.Long">
 			<column name="ID" />

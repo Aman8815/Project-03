@@ -382,6 +382,18 @@
 					<li class="nav-item dropdown" style="padding-left: 5px"><a
 					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 					role="button" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false"> <font style="color: white;">Smart Light</font>
+				</a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="<%=ORSView.SMART_CTL%>"><i
+							class="fa fa-user-circle"></i>Add Smart Light</a> <a
+							class="dropdown-item" href="<%=ORSView.SMART_LIST_CTL%>"><i
+							class="fa fa-users"></i>Smart Light List</a>
+					</div></li>
+					
+					<li class="nav-item dropdown" style="padding-left: 5px"><a
+					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+					role="button" data-toggle="dropdown" aria-haspopup="true"
 					aria-expanded="false"> <font style="color: white;">Water</font>
 				</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -391,17 +403,20 @@
 							class="fa fa-users"></i>Water List</a>
 					</div></li>
 					
-					<li class="nav-item dropdown" style="padding-left: 5px"><a
+						<li class="nav-item dropdown" style="padding-left: 5px"><a
 					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 					role="button" data-toggle="dropdown" aria-haspopup="true"
-					aria-expanded="false"> <font style="color: white;">Smart Light</font>
+					aria-expanded="false"> <font style="color: white;">Exam</font>
 				</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-						<a class="dropdown-item" href="<%=ORSView.SMART_CTL%>"><i
-							class="fa fa-user-circle"></i>Add Smart Light</a> <a
-							class="dropdown-item" href="<%=ORSView.SMART_LIST_CTL%>"><i
-							class="fa fa-users"></i>Smart Light List</a>
+						<a class="dropdown-item" href="<%=ORSView.EXAM_CTL%>"><i
+							class="fa fa-user-circle"></i>Add Exam</a> <a
+							class="dropdown-item" href="<%=ORSView.EXAM_LIST_CTL%>"><i
+							class="fa fa-users"></i>Exam List</a>
 					</div></li>
+					
+					
+					
 
 				<%
 					}

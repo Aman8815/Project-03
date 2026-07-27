@@ -3,7 +3,7 @@
 "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
 <!-- Generated 03-Jul-2026, 10:57:15 AM by Hibernate Tools 3.5.0.Final -->
 <hibernate-mapping>
-    <class name="in.co.rays.project_3.dto.SmartDTO" table="ST_SMART">
+    <class name="in.co.rays.project_3.dto.SmartDTO" table="st_smart">
     <id name="id" type="java.lang.Long">
     <column name="ID"></column>
     <generator class="increment"></generator>

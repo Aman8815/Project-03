@@ -110,20 +110,7 @@ i.css {
 								List li = (List) request.getAttribute("collegeList");
 							%>
 
-							<span class="pl-sm-5"><b>College</b><span
-								style="color: red;">*</span></span> </br>
-							<div class="col-sm-12">
-								<div class="input-group">
-									<div class="input-group-prepend">
-										<div class="input-group-text">
-											<i class="fa fa-building grey-text" style="font-size: 1rem;"></i>
-										</div>
-									</div>
-									<%=HTMLUtility.getList("collegeId", String.valueOf(dto.getCollegeId()), li)%>
-								</div>
-							</div>
-							<font color="red" class="pl-sm-5"> <%=ServletUtility.getErrorMessage("collegeId", request)%></font></br>
-
+							
 							<span class="pl-sm-5"><b>First Name</b> <span
 								style="color: red;">*</span></span> </br>
 							<div class="col-sm-12">
