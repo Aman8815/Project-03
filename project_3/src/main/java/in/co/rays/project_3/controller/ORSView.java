@@ -118,6 +118,9 @@ public interface ORSView {
 	
 	public String EXAM_VIEW = PAGE_FOLDER+"/ExamView.jsp";
 	public String EXAM_LIST_VIEW = PAGE_FOLDER+"/ExamListView.jsp";
+	
+	public String SCHOLARSHIP_VIEW = PAGE_FOLDER+"/ScholarshipView.jsp";
+	public String SCHOLARSHIP_LIST_VIEW = PAGE_FOLDER+"/ScholarshipListView.jsp";
 
 	public String ERROR_CTL = APP_CONTEXT + "/ErrorCtl";
 
@@ -225,4 +228,7 @@ public interface ORSView {
 	
 	public String EXAM_CTL = APP_CONTEXT+"/ctl/ExamCtl";
 	public String EXAM_LIST_CTL = APP_CONTEXT+"/ctl/ExamListCtl";
+	
+	public String SCHOLARSHIP_CTL = APP_CONTEXT+"/ctl/ScholarshipCtl";
+	public String SCHOLARSHIP_LIST_CTL = APP_CONTEXT+"/ctl/ScholarshipListCtl";
 }
