@@ -574,4 +574,19 @@ public final class ModelFactory {
 		}
 		return ScholarshipModel;
 	}
+	
+	public ResultModelInt getResultModel() {
+		ResultModelInt ResultModel = (ResultModelInt) modelCache.get("ResultModel");
+		if(ResultModel == null) {
+			if("Hibernate".equals(DATABASE)) {
+				ResultModel = new ResultModelHibImp();
+			}
+			if("JDBC".equals(DATABASE)){
+				ResultModel = new ResultModelHibImp();
+			}
+			
+			modelCache.put("ResultModel", ResultModel);
+		}
+		return ResultModel;
+	}
 }

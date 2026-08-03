@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03-Aug-2026, 11:59:40 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="in.co.rays.project_3.dto.ResultDTO" table="st_result">
+    <id name="id" type="java.lang.Long">
+    <column name="ID"></column>
+    <generator class="increment"></generator>
+    </id>
+        <property name="studentId" type="java.lang.String">
+            <column name="STUDENTID" />
+        </property>
+        <property name="resultStatus" type="java.lang.String">
+            <column name="RESULTSTATUS" />
+        </property>
+        <property name="percentage" type="java.lang.Integer">
+            <column name="PERCENTAGE" />
+        </property>
+        <property name="grade" type="java.lang.String">
+            <column name="GRADE" />
+        </property>
+    </class>
+</hibernate-mapping>

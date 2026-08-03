@@ -98,6 +98,8 @@
 			       <mapping resource="in/co/rays/project_3/hbm/ExamDTO.hbm.xml"/>
 			       
 			        <mapping resource="in/co/rays/project_3/hbm/ScholarshipDTO.hbm.xml"/>
+			        
+			        <mapping resource="in/co/rays/project_3/hbm/ResultDTO.hbm.xml"/>
 			      
 			  
 
