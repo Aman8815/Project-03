@@ -124,6 +124,9 @@ public interface ORSView {
 	
 	public String RESULT_VIEW = PAGE_FOLDER+"/ResultView.jsp";
 	public String RESULT_LIST_VIEW = PAGE_FOLDER+"/ResultListView.jsp";
+	
+	public String FEE_VIEW = PAGE_FOLDER+"/FeeView.jsp";
+	public String FEE_LIST_VIEW = PAGE_FOLDER+"/FeeListView.jsp";
 
 	public String ERROR_CTL = APP_CONTEXT + "/ErrorCtl";
 
@@ -237,4 +240,7 @@ public interface ORSView {
 	
 	public String RESULT_CTL = APP_CONTEXT+"/ctl/ResultCtl";
 	public String RESULT_LIST_CTL = APP_CONTEXT+"/ctl/ResultListCtl";
+	
+	public String FEE_CTL = APP_CONTEXT+"/ctl/FeeCtl";
+	public String FEE_LIST_CTL =APP_CONTEXT+"/ctl/FeeListCtl";
 }

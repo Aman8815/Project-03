@@ -589,4 +589,19 @@ public final class ModelFactory {
 		}
 		return ResultModel;
 	}
+	
+	public FeeModelInt getFeeModel() {
+		FeeModelInt FeeModel = (FeeModelInt) modelCache.get("FeeModel");
+		if(FeeModel == null) {
+			if("Hibernate".equals(DATABASE)) {
+				FeeModel = new FeeModelHibImp();
+			}
+			if("JDBC".equals(DATABASE)){
+				FeeModel = new FeeModelHibImp();
+			}
+			
+			modelCache.put("FeeModel", FeeModel);
+		}
+		return FeeModel;
+	}
 }
