@@ -604,4 +604,34 @@ public final class ModelFactory {
 		}
 		return FeeModel;
 	}
+	
+	public DepartmentModelInt getDepartmentModel() {
+		DepartmentModelInt DepartmentModel = (DepartmentModelInt) modelCache.get("DepartmentModel");
+		if(DepartmentModel == null) {
+			if("Hibernate".equals(DATABASE)) {
+				DepartmentModel = new DepartmentModelHibImp();
+			}
+			if("JDBC".equals(DATABASE)){
+				DepartmentModel = new DepartmentModelHibImp();
+			}
+			
+			modelCache.put("DepartmentModel", DepartmentModel);
+		}
+		return DepartmentModel;
+	}
+	
+	public VehicleModelInt getVehicleModel() {
+		VehicleModelInt VehicleModel = (VehicleModelInt) modelCache.get("VehicleModel");
+		if(VehicleModel == null) {
+			if("Hibernate".equals(DATABASE)) {
+				VehicleModel = new VehicleModelHibImp();
+			}
+			if("JDBC".equals(DATABASE)){
+				VehicleModel = new VehicleModelHibImp();
+			}
+			
+			modelCache.put("VehicleModel", VehicleModel);
+		}
+		return VehicleModel;
+	}
 }

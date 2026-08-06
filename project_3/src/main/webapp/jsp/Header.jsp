@@ -381,7 +381,7 @@
 							class="fa fa-users"></i>Smart Light List</a>
 					</div></li> --%>
 					
-					<li class="nav-item dropdown" style="padding-left: 5px"><a
+			<%-- 		<li class="nav-item dropdown" style="padding-left: 5px"><a
 					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
 					role="button" data-toggle="dropdown" aria-haspopup="true"
 					aria-expanded="false"> <font style="color: white;">Water</font>
@@ -416,7 +416,7 @@
 							class="fa fa-user-tie"></i>Add Faculty</a> <a class="dropdown-item"
 							href="<%=ORSView.FACULTY_LIST_CTL%>"><i class=" fa fa-users"></i>Faculty
 							List</a>
-					</div></li>
+					</div></li> --%>
 					
 						<li class="nav-item dropdown" style="padding-left: 5px"><a
 					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
@@ -453,6 +453,31 @@
 							href="<%=ORSView.FEE_LIST_CTL%>"><i class=" fa fa-users"></i>Fee
 							List</a>
 					</div></li>
+					
+							<li class="nav-item dropdown" style="padding-left: 5px"><a
+					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+					role="button" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false"> <font style="color: white;">Deparment
+					</font></a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="<%=ORSView.DEPARTMENT_CTL%>"><i
+							class="fa fa-user-tie"></i>Add Department</a> <a class="dropdown-item"
+							href="<%=ORSView.DEPARTMENT_LIST_CTL%>"><i class=" fa fa-users"></i>Department
+							List</a>
+					</div></li>
+					
+							<li class="nav-item dropdown" style="padding-left: 5px"><a
+					class="nav-link dropdown-toggle" href="#" id="navbarDropdown"
+					role="button" data-toggle="dropdown" aria-haspopup="true"
+					aria-expanded="false"> <font style="color: white;">Vehicle
+					</font></a>
+					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+						<a class="dropdown-item" href="<%=ORSView.VEHICLE_CTL%>"><i
+							class="fa fa-user-tie"></i>Add Vehicle</a> <a class="dropdown-item"
+							href="<%=ORSView.VEHICLE_LIST_CTL%>"><i class=" fa fa-users"></i>Vehicle
+							List</a>
+					</div></li>
+					
 					
 					
 					

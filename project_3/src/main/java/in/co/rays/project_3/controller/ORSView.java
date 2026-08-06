@@ -127,6 +127,12 @@ public interface ORSView {
 	
 	public String FEE_VIEW = PAGE_FOLDER+"/FeeView.jsp";
 	public String FEE_LIST_VIEW = PAGE_FOLDER+"/FeeListView.jsp";
+	
+	public String DEPARTMENT_VIEW = PAGE_FOLDER+"/DepartmentView.jsp";
+	public String DEPARTMENT_LIST_VIEW = PAGE_FOLDER+"/DepartmentListView.jsp";
+	
+	public String VEHICLE_VIEW = PAGE_FOLDER+"/VehicleView.jsp";
+	public String VEHICLE_LIST_VIEW =PAGE_FOLDER+"/VehicleListView.jsp";
 
 	public String ERROR_CTL = APP_CONTEXT + "/ErrorCtl";
 
@@ -243,4 +249,10 @@ public interface ORSView {
 	
 	public String FEE_CTL = APP_CONTEXT+"/ctl/FeeCtl";
 	public String FEE_LIST_CTL =APP_CONTEXT+"/ctl/FeeListCtl";
+	
+	public String DEPARTMENT_CTL = APP_CONTEXT+"/ctl/DepartmentCtl";
+	public String DEPARTMENT_LIST_CTL = APP_CONTEXT+"/ctl/DepartmentListCtl";
+	
+	public String VEHICLE_CTL = APP_CONTEXT+"/ctl/VehicleCtl";
+	public String VEHICLE_LIST_CTL = APP_CONTEXT+"/ctl/VehicleListCtl";
 }

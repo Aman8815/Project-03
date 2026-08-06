@@ -102,6 +102,10 @@
 			        <mapping resource="in/co/rays/project_3/hbm/ResultDTO.hbm.xml"/>
 			        
 			        <mapping resource="in/co/rays/project_3/hbm/FeeDTO.hbm.xml"/>
+			        
+			        <mapping resource="in/co/rays/project_3/hbm/VehicleDTO.hbm.xml"/>
+			        
+			        <mapping resource="in/co/rays/project_3/hbm/DepartmentDTO.hbm.xml"/>
 			      
 			  
 
