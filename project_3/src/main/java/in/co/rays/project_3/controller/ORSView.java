@@ -133,6 +133,9 @@ public interface ORSView {
 	
 	public String VEHICLE_VIEW = PAGE_FOLDER+"/VehicleView.jsp";
 	public String VEHICLE_LIST_VIEW =PAGE_FOLDER+"/VehicleListView.jsp";
+	
+	public String DOCTER_VIEW = PAGE_FOLDER+"/DocterView.jsp";
+	public String DOCTER_LIST_VIEW = PAGE_FOLDER+"/DocterListView.jsp";
 
 	public String ERROR_CTL = APP_CONTEXT + "/ErrorCtl";
 
@@ -255,4 +258,7 @@ public interface ORSView {
 	
 	public String VEHICLE_CTL = APP_CONTEXT+"/ctl/VehicleCtl";
 	public String VEHICLE_LIST_CTL = APP_CONTEXT+"/ctl/VehicleListCtl";
+	
+	public String DOCTER_CTL = APP_CONTEXT+"/ctl/DocterCtl";
+	public String DOCTER_LIST_CTL = APP_CONTEXT+"/ctl/DocterListCtl";
 }

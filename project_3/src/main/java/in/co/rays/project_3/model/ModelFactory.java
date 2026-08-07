@@ -634,4 +634,19 @@ public final class ModelFactory {
 		}
 		return VehicleModel;
 	}
+	
+	public DocterModelInt getDocterModel() {
+		DocterModelInt DocterModel = (DocterModelInt) modelCache.get("DocterModel");
+		if(DocterModel == null) {
+			if("Hibernate".equals(DATABASE)) {
+				DocterModel = new DocterModelHibImp();
+			}
+			if("JDBC".equals(DATABASE)){
+				DocterModel = new DocterModelHibImp();
+			}
+			
+			modelCache.put("DocterModel", DocterModel);
+		}
+		return DocterModel;
+	}
 }
