@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 11-Mar-2026, 11:13:08 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="OnlineCourseDTO" table="st_onlinecourse">
+       
+       <id name="id" type="java.lang.Long">
+			<column name="ID" />
+			<generator class="increment" />
+		</id>
+        <property name="course_title" type="java.lang.String">
+            <column name="COURSE_TITLE" />
+        </property>
+        <property name="duration" type="java.lang.String">
+            <column name="DURATION" />
+        </property>
+        <property name="instructor_name" type="java.lang.String">
+            <column name="INSTRUCTOR_NAME" />
+        </property>
+        <property name="module_name" type="java.lang.String">
+            <column name="MODULE_NAME" />
+        </property>
+    </class>
+</hibernate-mapping>

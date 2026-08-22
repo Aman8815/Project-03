@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 16-Mar-2026, 11:26:58 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="in.co.rays.project_3.dto.MeetingRoomDTO" table="st_meetingroom">
+    
+          <id name="id" type="java.lang.Long">
+			<column name="ID" />
+			<generator class="increment" />
+		</id>
+        <property name="assetCode" type="java.lang.String">
+            <column name="ASSETCODE" />
+        </property>
+        <property name="assetName" type="java.lang.String">
+            <column name="ASSETNAME" />
+        </property>
+        <property name="assetStatus" type="java.lang.String">
+            <column name="ASSETSTATUS" />
+        </property>
+        <property name="assetType" type="java.lang.String">
+            <column name="ASSETTYPE" />
+        </property>
+    </class>
+</hibernate-mapping>

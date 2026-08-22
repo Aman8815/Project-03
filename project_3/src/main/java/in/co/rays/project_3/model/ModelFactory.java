@@ -649,4 +649,34 @@ public final class ModelFactory {
 		}
 		return DocterModel;
 	}
+	
+	public VendorModelInt getVendorModel() {
+		VendorModelInt VendorModel = (VendorModelInt) modelCache.get("VendorModel");
+		if(VendorModel == null) {
+			if("Hibernate".equals(DATABASE)) {
+				VendorModel = new VendorModelHibImp();
+			}
+			if("JDBC".equals(DATABASE)){
+				VendorModel = new VendorModelHibImp();
+			}
+			
+			modelCache.put("VendorModel", VendorModel);
+		}
+		return VendorModel;
+	}
+	
+	public PatientModelInt getPatientModel() {
+		PatientModelInt PatientModel = (PatientModelInt) modelCache.get("PatientModel");
+		if(PatientModel == null) {
+			if("Hibernate".equals(DATABASE)) {
+				PatientModel = new PatientModelHibImp();
+			}
+			if("JDBC".equals(DATABASE)){
+				PatientModel = new PatientModelHibImp();
+			}
+			
+			modelCache.put("PatientModel", PatientModel);
+		}
+		return PatientModel;
+	}
 }

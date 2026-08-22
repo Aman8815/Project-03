@@ -94,6 +94,24 @@
 			       <mapping resource="in/co/rays/project_3/hbm/WaterDTO.hbm.xml"/>
 			       
 			       <mapping resource="in/co/rays/project_3/hbm/SmartDTO.hbm.xml"/>
+			       
+			       <mapping resource="in/co/rays/project_3/hbm/ExamDTO.hbm.xml"/>
+			       
+			        <mapping resource="in/co/rays/project_3/hbm/ScholarshipDTO.hbm.xml"/>
+			        
+			        <mapping resource="in/co/rays/project_3/hbm/ResultDTO.hbm.xml"/>
+			        
+			        <mapping resource="in/co/rays/project_3/hbm/FeeDTO.hbm.xml"/>
+			        
+			        <mapping resource="in/co/rays/project_3/hbm/VehicleDTO.hbm.xml"/>
+			        
+			        <mapping resource="in/co/rays/project_3/hbm/DepartmentDTO.hbm.xml"/>
+			        
+			        <mapping resource="in/co/rays/project_3/hbm/DocterDTO.hbm.xml"/>
+			        
+			        <mapping resource="in/co/rays/project_3/hbm/VendorDTO.hbm.xml"/>
+			        
+			        <mapping resource="in/co/rays/project_3/hbm/PatientDTO.hbm.xml"/>
 			      
 			  
 

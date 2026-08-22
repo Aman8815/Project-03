@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 31-Jul-2026, 11:04:15 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="in.co.rays.project_3.dto.ScholarshipDTO" table="st_scholarship">
+        <id name="id" type="java.lang.Long">
+			<column name="ID" />
+			<generator class="increment" />
+		</id>
+        <property name="scholarshipName" type="java.lang.String">
+            <column name="SCHOLARSHIPNAME" />
+        </property>
+        <property name="amount" type="java.lang.Integer">
+            <column name="AMOUNT" />
+        </property>
+        <property name="eligibility" type="java.lang.String">
+            <column name="ELIGIBILITY" />
+        </property>
+        <property name="lastDate" type="java.util.Date">
+            <column name="LASTDATE" />
+        </property>
+    </class>
+</hibernate-mapping>

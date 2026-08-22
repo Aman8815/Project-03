@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 03-Jul-2026, 10:57:15 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping package="in.co.rays.project_3.dto">
+    <class name="in.co.rays.project_3.dto.SmartDTO" table="st_smart">
+    <id name="id" type="java.lang.Long">
+    <column name="ID"></column>
+    <generator class="increment"></generator>
+    </id>
+        <property name="lightCode" type="java.lang.String">
+            <column name="LIGHTCODE" />
+        </property>
+        <property name="brightnessLevel" type="java.lang.Long">
+            <column name="BRIGHTNESSLEVEL" />
+        </property>
+        <property name="roomName" type="java.lang.String">
+            <column name="ROOMNAME" />
+        </property>
+        <property name="status" type="java.lang.String">
+            <column name="STATUS" />
+        </property>
+    </class>
+</hibernate-mapping>

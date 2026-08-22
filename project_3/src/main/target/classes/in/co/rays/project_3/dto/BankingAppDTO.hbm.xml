@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 26-May-2026, 10:54:46 AM by Hibernate Tools 3.5.0.Final -->
+<hibernate-mapping>
+    <class name="in.co.rays.project_3.dto.BankingAppDTO" table="st_bankingapp">
+    <id name="id" type="java.lang.Long">
+    <column name="ID"></column>
+    <generator class="increment"></generator>
+    </id>
+        <property name="accountHolder" type="java.lang.String">
+            <column name="ACCOUNTHOLDER" />
+        </property>
+        <property name="balance" type="int">
+            <column name="BALANCE" />
+        </property>
+        <property name="IFSCCode" type="java.lang.String">
+            <column name="IFSCCODE" />
+        </property>
+        <property name="branchName" type="java.lang.String">
+            <column name="BRANCHNAME" />
+        </property>
+    </class>
+</hibernate-mapping>
